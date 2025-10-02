@@ -96,7 +96,7 @@ export class QuizService {
    */
   private async chargerQuiz(): Promise<void> {
     try {
-      const response = await fetch('/quiz.yaml');
+      const response = await fetch('./quiz.yaml');
       const yamlText = await response.text();
       const sections = yaml.load(yamlText) as Section[];
       this._sections.set(sections);

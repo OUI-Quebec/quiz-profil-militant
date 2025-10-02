@@ -20,7 +20,7 @@ export class ProfilService {
    */
   private async chargerProfils(): Promise<void> {
     try {
-      const response = await fetch('/profils.yaml');
+      const response = await fetch('./profils.yaml');
       const yamlText = await response.text();
       const profils = yaml.load(yamlText) as Profil[];
       this._profils.set(profils);
