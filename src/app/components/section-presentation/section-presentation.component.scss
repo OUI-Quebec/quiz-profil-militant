@@ -128,14 +128,11 @@
       &:before {
         left: 100%;
       }
-
-      .btn-icon {
-        animation: iconShake 0.5s ease-in-out;
-      }
     }
 
     .btn-icon {
       font-size: 1.3rem;
+      transition: transform 0.3s ease;
     }
   }
 
@@ -289,19 +286,6 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes iconShake {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  75% {
-    transform: rotate(10deg);
   }
 }
 

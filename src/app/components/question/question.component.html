@@ -28,15 +28,38 @@
         class="btn-precedent"
         (click)="precedent()"
         [disabled]="!peutRetourner"
+        (mouseenter)="onHoverPrecedent(true)"
+        (mouseleave)="onHoverPrecedent(false)"
       >
-        <span class="btn-icon">←</span>
+        <span class="btn-icon">
+          <app-lottie-emoji
+            #precedentLottie
+            [emojiCode]="'1f448'"
+            [size]="20"
+            [loop]="false"
+            [autoplay]="false"
+          ></app-lottie-emoji>
+        </span>
         <span class="btn-text">Précédent</span>
       </button>
 
       <div class="actions-centre">
-        <button class="btn-passer" (click)="passer()">
+        <button
+          class="btn-passer"
+          (click)="passer()"
+          (mouseenter)="onHoverPasser(true)"
+          (mouseleave)="onHoverPasser(false)"
+        >
           <span class="btn-text">Passer</span>
-          <span class="btn-icon">⏭️</span>
+          <span class="btn-icon">
+            <app-lottie-emoji
+              #passerLottie
+              [emojiCode]="'1f44e'"
+              [size]="20"
+              [loop]="false"
+              [autoplay]="false"
+            ></app-lottie-emoji>
+          </span>
         </button>
       </div>
 
@@ -44,15 +67,38 @@
         class="btn-suivant"
         (click)="suivant()"
         [disabled]="!choixSelectionne"
+        (mouseenter)="onHoverSuivant(true)"
+        (mouseleave)="onHoverSuivant(false)"
       >
         <span class="btn-text">Suivant</span>
-        <span class="btn-icon">→</span>
+        <span class="btn-icon">
+          <app-lottie-emoji
+            #suivantLottie
+            [emojiCode]="'1f449'"
+            [size]="20"
+            [loop]="false"
+            [autoplay]="false"
+          ></app-lottie-emoji>
+        </span>
       </button>
     </div>
 
     <div class="actions-secondaires">
-      <button class="btn-recommencer" (click)="recommencer()">
-        <span class="btn-icon">🔄</span>
+      <button
+        class="btn-recommencer"
+        (click)="recommencer()"
+        (mouseenter)="onHoverRecommencer(true)"
+        (mouseleave)="onHoverRecommencer(false)"
+      >
+        <span class="btn-icon">
+          <app-lottie-emoji
+            #recommencerLottie
+            [emojiCode]="'1f91a'"
+            [size]="20"
+            [loop]="false"
+            [autoplay]="false"
+          ></app-lottie-emoji>
+        </span>
         <span class="btn-text">Recommencer le quiz</span>
       </button>
     </div>

@@ -1,12 +1,19 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Question } from '../../model/question';
 import { Choix } from '../../model/choix';
+import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 
 @Component({
   selector: 'app-question',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LottieEmojiComponent],
   templateUrl: './question.component.html',
   styleUrl: './question.component.scss',
 })
@@ -17,6 +24,11 @@ export class QuestionComponent {
   @Output() precedentDemande = new EventEmitter<void>();
   @Output() passerDemande = new EventEmitter<void>();
   @Output() recommencerDemande = new EventEmitter<void>();
+
+  @ViewChild('precedentLottie') precedentLottie!: LottieEmojiComponent;
+  @ViewChild('suivantLottie') suivantLottie!: LottieEmojiComponent;
+  @ViewChild('passerLottie') passerLottie!: LottieEmojiComponent;
+  @ViewChild('recommencerLottie') recommencerLottie!: LottieEmojiComponent;
 
   choixSelectionne: Choix | null = null;
 
@@ -41,5 +53,45 @@ export class QuestionComponent {
 
   recommencer(): void {
     this.recommencerDemande.emit();
+  }
+
+  onHoverPrecedent(isHovering: boolean): void {
+    if (this.precedentLottie) {
+      if (isHovering) {
+        this.precedentLottie.playAnimation();
+      } else {
+        this.precedentLottie.stopAnimation();
+      }
+    }
+  }
+
+  onHoverSuivant(isHovering: boolean): void {
+    if (this.suivantLottie) {
+      if (isHovering) {
+        this.suivantLottie.playAnimation();
+      } else {
+        this.suivantLottie.stopAnimation();
+      }
+    }
+  }
+
+  onHoverPasser(isHovering: boolean): void {
+    if (this.passerLottie) {
+      if (isHovering) {
+        this.passerLottie.playAnimation();
+      } else {
+        this.passerLottie.stopAnimation();
+      }
+    }
+  }
+
+  onHoverRecommencer(isHovering: boolean): void {
+    if (this.recommencerLottie) {
+      if (isHovering) {
+        this.recommencerLottie.playAnimation();
+      } else {
+        this.recommencerLottie.stopAnimation();
+      }
+    }
   }
 }

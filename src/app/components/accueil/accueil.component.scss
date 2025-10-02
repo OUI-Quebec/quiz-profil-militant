@@ -184,10 +184,6 @@
     &:before {
       left: 100%;
     }
-
-    .btn-icon {
-      transform: translateX(5px);
-    }
   }
 
   &:active {
@@ -195,7 +191,6 @@
   }
 
   .btn-icon {
-    transition: transform 0.3s ease;
     font-size: 1.5rem;
   }
 }

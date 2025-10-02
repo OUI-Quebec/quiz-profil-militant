@@ -18,9 +18,22 @@
     </div>
 
     <div class="actions">
-      <button class="btn-primary" (click)="commencerQuiz()">
+      <button
+        class="btn-primary"
+        (click)="commencerQuiz()"
+        (mouseenter)="onHoverCommencer(true)"
+        (mouseleave)="onHoverCommencer(false)"
+      >
         <span class="btn-text">Commencer le quiz</span>
-        <span class="btn-icon">→</span>
+        <span class="btn-icon">
+          <app-lottie-emoji
+            #commencerLottie
+            [emojiCode]="'1f449'"
+            [size]="24"
+            [loop]="false"
+            [autoplay]="false"
+          ></app-lottie-emoji>
+        </span>
       </button>
     </div>
 

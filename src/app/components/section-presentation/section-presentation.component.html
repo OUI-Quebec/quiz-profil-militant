@@ -18,9 +18,19 @@
           class="btn-commencer"
           (click)="commencerSection()"
           type="button"
+          (mouseenter)="onHoverCommencerSection(true)"
+          (mouseleave)="onHoverCommencerSection(false)"
         >
           <span class="btn-text">Commencer cette section</span>
-          <span class="btn-icon">🚀</span>
+          <span class="btn-icon">
+            <app-lottie-emoji
+              #commencerSectionLottie
+              [emojiCode]="'1f680'"
+              [size]="24"
+              [loop]="false"
+              [autoplay]="false"
+            ></app-lottie-emoji>
+          </span>
         </button>
       </div>
     </div>

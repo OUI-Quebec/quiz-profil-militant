@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProfilService } from '../../services/profil.service';
@@ -20,6 +20,8 @@ import { Profil } from '../../model/profil';
   styleUrl: './accueil.component.scss',
 })
 export class AccueilComponent {
+  @ViewChild('commencerLottie') commencerLottie!: LottieEmojiComponent;
+
   // Signal pour le dialogue
   private dialogOpen = signal(false);
   private profilSelectionne = signal<Profil | null>(null);
@@ -57,5 +59,15 @@ export class AccueilComponent {
   fermerDialog(): void {
     this.dialogOpen.set(false);
     this.profilSelectionne.set(null);
+  }
+
+  onHoverCommencer(isHovering: boolean): void {
+    if (this.commencerLottie) {
+      if (isHovering) {
+        this.commencerLottie.playAnimation();
+      } else {
+        this.commencerLottie.stopAnimation();
+      }
+    }
   }
 }
