@@ -9,7 +9,7 @@
     - Logistique lors de rassemblements
     - Mobilisation éclair
   couleur : '#2a7a22'
-  emojis : '✊'
+  emojis : '270a'
 - nom : Socio-culturel
   description_courte : L'âme créative du mouvement
   description_longue : Mobilise par la culture et crée des moments rassembleurs. Transforme les événements en expériences mémorables grâce à la créativité et à l'aspect humain.
@@ -19,7 +19,7 @@
     - Mise en scène
     - Ateliers participatifs et animation conviviale lors des rassemblements
   couleur : '#027eb2'
-  emojis : '🥳'
+  emojis : '1f973'
 - nom : Idées
   description_courte : Le-la stratège et vulgarisateur-rice
   description_longue : Tu plonges dans les grands débats et analyses les enjeux en profondeur. Tu aimes éclairer les autres avec des faits clairs et des arguments solides. Ton expertise nourrit un discours cohérent, percutant et documenté.
@@ -30,7 +30,7 @@
     - Participer à des groupes de réflexion
     - Proposer des arguments originaux et rédiger des articles ou tribunes
   couleur : '#ffffff'
-  emojis : '💡'
+  emojis : '1f4a1'
 - nom : Introverti
   description_courte : L'agent-e discret-e
   description_longue : Apporte une force tranquille au mouvement en travaillant en arrière-plan. Privilégie les petits groupes et les contextes calmes, planifie avant d'agir et trouve sa satisfaction dans l'efficacité plutôt que dans la visibilité.
@@ -40,7 +40,7 @@
     - Recherche et rédaction de textes
     - Soutien logistique.
   couleur : '#d7200e'
-  emojis : '📣'
+  emojis : '1f92b'
 - nom : Leader
   description_courte : Le-la rassembleur-euse
   description_longue : Coordonne, inspire et structure le mouvement. Garantit que chacun se sente impliqué et oriente les efforts vers des résultats concrets.
@@ -50,4 +50,4 @@
     - Représentation publique
     - Mentorat et accompagnement des nouveaux militantes.
   couleur : '#f5a302'
-  emojis : '🚩'
+  emojis : '1f91d'

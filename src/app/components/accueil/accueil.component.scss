@@ -253,7 +253,6 @@
   .profil-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
-    animation: iconBounce 2s ease-in-out infinite;
   }
 
   h4 {
@@ -277,22 +276,6 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes iconBounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
   }
 }
 

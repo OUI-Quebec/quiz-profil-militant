@@ -19,8 +19,8 @@
     animation: headerSlide 0.8s ease-out;
 
     .celebration {
-      font-size: 4rem;
-      margin-bottom: 1rem;
+      display: block;
+      margin: 0 auto 2rem auto;
       animation: celebrationBounce 2s ease-in-out infinite;
     }
 

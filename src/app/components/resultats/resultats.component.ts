@@ -2,12 +2,14 @@ import { Component, Input, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Profil } from '../../model/profil';
 import { QuizService } from '../../services/quiz.service';
+import { ProfilService } from '../../services/profil.service';
 import { ProfilDialogComponent } from '../profil-dialog/profil-dialog.component';
+import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 
 @Component({
   selector: 'app-resultats',
   standalone: true,
-  imports: [CommonModule, ProfilDialogComponent],
+  imports: [CommonModule, ProfilDialogComponent, LottieEmojiComponent],
   templateUrl: './resultats.component.html',
   styleUrl: './resultats.component.scss',
 })
@@ -17,15 +19,16 @@ export class ResultatsComponent implements OnInit {
   profilPrincipal: Profil | null = null;
   autresProfils: Profil[] = [];
 
-  // Signaux pour le dialogue
   private dialogOpen = signal(false);
   private profilSelectionne = signal<Profil | null>(null);
 
-  // Computed pour les données du dialogue
   isDialogOpen = computed(() => this.dialogOpen());
   profil = computed(() => this.profilSelectionne());
 
-  constructor(private quizService: QuizService) {}
+  constructor(
+    private quizService: QuizService,
+    private profilService: ProfilService
+  ) {}
 
   ngOnInit(): void {
     if (this.profils && this.profils.length > 0) {
@@ -34,34 +37,24 @@ export class ResultatsComponent implements OnInit {
     }
   }
 
-  getEmojiPourProfil(nom: string): string {
-    const emojis: { [key: string]: string } = {
-      Activiste: '⚡',
-      Idées: '🧠',
-      Leader: '👥',
-    };
-    return emojis[nom] || '🎯';
+  getEmojiCodePourProfil(nom: string): string {
+    const profilData = this.profilService.getProfilParNom(nom);
+    return profilData?.emojis || '1f3af';
   }
 
   getConseilsPourProfil(nom: string): string[] {
-    const conseils: { [key: string]: string[] } = {
-      Activiste: [
-        'Participe aux manifestations et actions de rue',
-        'Distribue des tracts dans les lieux publics',
-        'Organise des actions de visibilité créatives',
-      ],
-      Idées: [
-        "Rédige des textes d'opinion pour les médias",
-        'Anime des ateliers de formation politique',
-        'Participe aux débats et discussions publiques',
-      ],
-      Leader: [
-        'Coordonne des équipes locales',
-        'Planifie les campagnes et stratégies',
-        'Anime des assemblées et réunions',
-      ],
-    };
-    return conseils[nom] || ['Engage-toi selon tes forces !'];
+    const profilData = this.profilService.getProfilParNom(nom);
+    return profilData?.exemples_action || ['Engage-toi selon tes forces !'];
+  }
+
+  getDescriptionCourtePourProfil(nom: string): string {
+    const profilData = this.profilService.getProfilParNom(nom);
+    return profilData?.description_courte || '';
+  }
+
+  getDescriptionLonguePourProfil(nom: string): string {
+    const profilData = this.profilService.getProfilParNom(nom);
+    return profilData?.description_longue || '';
   }
 
   partagerResultats(): void {

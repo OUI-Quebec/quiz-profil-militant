@@ -1,11 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 import { Profil } from '../../model/profil';
 
 @Component({
   selector: 'app-profil-dialog',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LottieEmojiComponent],
   templateUrl: './profil-dialog.component.html',
   styleUrl: './profil-dialog.component.scss',
 })

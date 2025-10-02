@@ -35,7 +35,12 @@
     <div class="profils-grid">
       @for (profil of profils(); track profil.nom) {
       <div class="profil-card" (click)="ouvrirDialogProfil(profil)">
-        <div class="profil-icon">{{ profil.icon }}</div>
+        <div class="profil-icon">
+          <app-lottie-emoji
+            [emojiCode]="profil.emojis"
+            [size]="64"
+          ></app-lottie-emoji>
+        </div>
         <h4>{{ profil.nom }}</h4>
         <p>{{ profil.description_courte }}</p>
       </div>
