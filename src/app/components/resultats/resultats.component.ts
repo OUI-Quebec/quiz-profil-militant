@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { Profil } from '../../model/profil';
 import { QuizService } from '../../services/quiz.service';
 import { ProfilService } from '../../services/profil.service';
@@ -36,7 +37,8 @@ export class ResultatsComponent implements OnInit {
 
   constructor(
     private quizService: QuizService,
-    private profilService: ProfilService
+    private profilService: ProfilService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -121,8 +123,8 @@ export class ResultatsComponent implements OnInit {
       // D'abord nettoyer les données via le service
       this.quizService.recommencerQuiz();
 
-      // Puis recharger la page pour revenir à l'accueil
-      window.location.href = '/';
+      // Puis naviguer vers l'accueil avec le router Angular
+      this.router.navigate(['/']);
     }
   }
 }

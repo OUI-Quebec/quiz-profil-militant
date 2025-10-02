@@ -115,8 +115,8 @@ export class QuizComponent {
       this.quizService.recommencerQuiz();
       this.sectionDejaCommencee.set(-1); // Réinitialiser l'état local
 
-      // Forcer le rechargement complet pour éviter les problèmes de state
-      window.location.href = '/';
+      // Naviguer vers l'accueil avec le router Angular
+      this.router.navigate(['/']);
     }
   }
 }
