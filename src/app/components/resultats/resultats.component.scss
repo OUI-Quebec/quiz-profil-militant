@@ -3,25 +3,21 @@
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
   color: white;
   position: relative;
-  overflow: hidden;
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 3rem 2rem;
     position: relative;
-    z-index: 1;
   }
 
   .header-section {
     text-align: center;
     margin-bottom: 3rem;
-    animation: headerSlide 0.8s ease-out;
 
     .celebration {
       display: block;
       margin: 0 auto 2rem auto;
-      animation: celebrationBounce 2s ease-in-out infinite;
     }
 
     .titre-principal {
@@ -32,64 +28,40 @@
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: titleShine 0.8s ease-out 0.2s both;
     }
 
     .sous-titre {
       font-size: 1.3rem;
       opacity: 0.9;
       font-weight: 300;
-      animation: subtitleFade 0.8s ease-out 0.4s both;
     }
   }
 
   .profil-principal {
     margin-bottom: 3rem;
-    animation: mainProfileSlide 0.8s ease-out 0.6s both;
 
     .profil-hero {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(20px);
-      border-radius: 25px;
+      border-radius: 12px;
       padding: 3rem;
       text-align: center;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
       cursor: pointer;
       transition: all 0.3s ease;
 
       &:hover {
         background: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
-      }
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          45deg,
-          transparent,
-          rgba(255, 255, 255, 0.05),
-          transparent
-        );
-        animation: heroShimmer 3s ease-in-out infinite;
       }
 
       .profil-badge {
         display: inline-block;
         background: linear-gradient(45deg, #10b981, #34d399);
         padding: 0.5rem 1.5rem;
-        border-radius: 50px;
+        border-radius: 8px;
         font-weight: 600;
         font-size: 0.9rem;
         margin-bottom: 2rem;
-        animation: badgeGlow 0.8s ease-out 0.8s both;
       }
 
       .profil-image-placeholder {
@@ -100,31 +72,26 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        animation: imagePulse 2s ease-in-out infinite;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        opacity: 0.9;
+        border: 3px solid rgba(255, 255, 255, 0.2);
 
         .profil-emoji {
-          font-size: 4rem;
+          display: block;
         }
       }
 
       .profil-titre {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         font-weight: 700;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         color: #fef3c7;
-        animation: profileTitleFade 0.8s ease-out 1s both;
       }
 
       .profil-score {
         margin-bottom: 2rem;
-        animation: scoreFade 0.8s ease-out 1.2s both;
 
         .score-numero {
           font-size: 3rem;
           font-weight: 800;
-          color: #10b981;
           display: block;
         }
 
@@ -139,15 +106,13 @@
         line-height: 1.6;
         margin-bottom: 2rem;
         opacity: 0.9;
-        animation: descriptionFade 0.8s ease-out 1.4s both;
       }
 
       .profil-conseils {
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
+        border-radius: 8px;
         padding: 2rem;
         text-align: left;
-        animation: adviceFade 0.8s ease-out 1.6s both;
 
         h3 {
           color: #fef3c7;
@@ -178,91 +143,82 @@
 
   .autres-profils {
     margin-bottom: 3rem;
-    animation: otherProfilesFade 0.8s ease-out 1.8s both;
 
     .section-titre {
-      text-align: center;
       font-size: 2rem;
+      font-weight: 700;
       margin-bottom: 2rem;
-      color: #fef3c7;
+      text-align: center;
     }
 
     .profils-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
     }
 
     .profil-card {
       background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 1.5rem;
+      border-radius: 12px;
+      padding: 2rem;
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-      animation: cardSlideUp 0.6s ease-out both;
       cursor: pointer;
+      transition: all 0.3s ease;
 
       &:hover {
         background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
 
       .profil-mini-icon {
-        width: 60px;
-        height: 60px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         margin: 0 auto 1rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        opacity: 0.9;
       }
 
       .profil-mini-titre {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
         color: #fef3c7;
       }
 
       .profil-mini-score {
-        font-weight: 600;
+        font-size: 1.1rem;
         margin-bottom: 1rem;
-        color: #10b981;
+        font-weight: 600;
       }
 
       .profil-barre {
-        height: 6px;
         background: rgba(255, 255, 255, 0.2);
-        border-radius: 3px;
+        height: 8px;
+        border-radius: 4px;
         overflow: hidden;
 
         .profil-barre-remplie {
           height: 100%;
-          background: linear-gradient(90deg, #10b981, #34d399);
-          border-radius: 3px;
-          transition: width 1s ease-out;
+          border-radius: 4px;
+          transition: width 0.3s ease;
         }
       }
     }
   }
 
   .partage-section {
-    text-align: center;
     margin-bottom: 3rem;
-    animation: shareFade 0.8s ease-out 2s both;
+    text-align: center;
 
     h3 {
       font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #fef3c7;
+      margin-bottom: 2rem;
     }
 
     .partage-actions {
       display: flex;
-      justify-content: center;
       gap: 1rem;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
@@ -271,7 +227,7 @@
       background: linear-gradient(45deg, #6366f1, #8b5cf6);
       border: none;
       padding: 1rem 2rem;
-      border-radius: 50px;
+      border-radius: 8px;
       color: white;
       cursor: pointer;
       font-weight: 500;
@@ -279,34 +235,15 @@
       align-items: center;
       gap: 0.5rem;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
 
       &:hover {
-        box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
-      }
-    }
-
-    .btn-twitter {
-      background: linear-gradient(45deg, #000000, #333333) !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-
-      &:hover {
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
-      }
-    }
-
-    .btn-recommencer {
-      background: linear-gradient(45deg, #ef4444, #f87171);
-      box-shadow: 0 4px 20px rgba(239, 68, 68, 0.3);
-
-      &:hover {
-        box-shadow: 0 8px 30px rgba(239, 68, 68, 0.5);
+        transform: translateY(-2px);
       }
     }
   }
 
   .engagement-section {
-    animation: engagementFade 0.8s ease-out 2.2s both;
+    text-align: center;
 
     .engagement-card {
       background: linear-gradient(
@@ -315,22 +252,19 @@
         rgba(251, 191, 36, 0.2)
       );
       border: 2px solid rgba(245, 158, 11, 0.4);
-      border-radius: 20px;
+      border-radius: 12px;
       padding: 2.5rem;
       text-align: center;
-      backdrop-filter: blur(10px);
 
       h3 {
         font-size: 2rem;
         margin-bottom: 1rem;
-        color: #fef3c7;
       }
 
       p {
         font-size: 1.2rem;
         margin-bottom: 2rem;
         opacity: 0.9;
-        line-height: 1.6;
       }
 
       .btn-engagement {
@@ -338,332 +272,59 @@
         color: #1f2937;
         text-decoration: none;
         padding: 1.2rem 2.5rem;
-        border-radius: 50px;
+        border-radius: 8px;
         font-weight: 600;
         display: inline-flex;
         align-items: center;
         gap: 1rem;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
 
         &:hover {
-          box-shadow: 0 8px 30px rgba(245, 158, 11, 0.6);
+          transform: translateY(-2px);
         }
       }
     }
   }
 
   .resultats-background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
     z-index: 0;
-    overflow: hidden;
 
     .confetti {
-      position: relative;
-      width: 100%;
-      height: 100%;
-
       .confetti-piece {
         position: absolute;
         width: 10px;
         height: 10px;
         background: #fbbf24;
-        animation: confettiFall 3s linear infinite;
-
-        &:nth-child(odd) {
-          background: #10b981;
-        }
-        &:nth-child(3n) {
-          background: #ef4444;
-        }
-        &:nth-child(4n) {
-          background: #8b5cf6;
-        }
-
-        &:nth-child(1) {
-          left: 10%;
-          animation-duration: 3s;
-        }
-        &:nth-child(2) {
-          left: 20%;
-          animation-duration: 2.5s;
-        }
-        &:nth-child(3) {
-          left: 30%;
-          animation-duration: 3.5s;
-        }
-        &:nth-child(4) {
-          left: 40%;
-          animation-duration: 2.8s;
-        }
-        &:nth-child(5) {
-          left: 50%;
-          animation-duration: 3.2s;
-        }
-        &:nth-child(6) {
-          left: 60%;
-          animation-duration: 2.9s;
-        }
-        &:nth-child(7) {
-          left: 70%;
-          animation-duration: 3.1s;
-        }
-        &:nth-child(8) {
-          left: 80%;
-          animation-duration: 2.7s;
-        }
-        &:nth-child(9) {
-          left: 90%;
-          animation-duration: 3.3s;
-        }
+        border-radius: 50%;
       }
     }
   }
 }
 
-// Animations
-@keyframes celebrationBounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-}
-
-@keyframes headerSlide {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes titleShine {
-  0% {
-    opacity: 0;
-    filter: brightness(0.8);
-  }
-  100% {
-    opacity: 1;
-    filter: brightness(1.2);
-  }
-}
-
-@keyframes subtitleFade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.9;
-  }
-}
-
-@keyframes mainProfileSlide {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes heroShimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes badgeGlow {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes imagePulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-@keyframes profileTitleFade {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scoreFade {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes descriptionFade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.9;
-  }
-}
-
-@keyframes adviceFade {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes otherProfilesFade {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes cardSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes shareFade {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes engagementFade {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes confettiFall {
-  0% {
-    transform: translateY(-100px) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-// Responsive design
+// Responsive
 @media (max-width: 768px) {
   .resultats-container {
     .container {
       padding: 2rem 1rem;
     }
 
-    .header-section {
-      .titre-principal {
-        font-size: 2.2rem;
-      }
-
-      .sous-titre {
-        font-size: 1.1rem;
-      }
+    .header-section .titre-principal {
+      font-size: 2.5rem;
     }
 
     .profil-principal .profil-hero {
-      padding: 2rem 1.5rem;
-
-      .profil-titre {
-        font-size: 2rem;
-      }
-
-      .profil-image-placeholder {
-        width: 100px;
-        height: 100px;
-
-        .profil-emoji {
-          font-size: 3rem;
-        }
-      }
+      padding: 2rem;
     }
 
-    .autres-profils .profils-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .partage-section .partage-actions {
+    .partage-actions {
       flex-direction: column;
       align-items: center;
-    }
-
-    .engagement-section .engagement-card {
-      padding: 2rem 1.5rem;
-
-      h3 {
-        font-size: 1.7rem;
-      }
-
-      p {
-        font-size: 1.1rem;
-      }
     }
   }
 }

@@ -29,7 +29,7 @@ jobs:
       run: npm ci
       
     - name: Build
-      run: npm run build -- --configuration=production --base-href=/quiz-profil-militant/
+      run: npm run build -- --configuration=production --base-href=/quiz/
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
