@@ -1,1 +1,186 @@
-/* You can add global styles to this file, and also import other style files */
+// Reset et styles globaux
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Oxygen", Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Variables de couleurs OUI Québec
+:root {
+  --oui-blue: #1e40af;
+  --oui-blue-light: #3b82f6;
+  --oui-blue-lighter: #60a5fa;
+  --oui-yellow: #f59e0b;
+  --oui-yellow-light: #fbbf24;
+  --oui-cream: #fef3c7;
+  --oui-success: #10b981;
+  --oui-success-light: #34d399;
+  --oui-danger: #ef4444;
+  --oui-danger-light: #f87171;
+  --oui-purple: #6366f1;
+  --oui-purple-light: #8b5cf6;
+  --oui-dark: #1f2937;
+  --oui-gray: #6b7280;
+  --oui-light-gray: #e5e7eb;
+}
+
+// Styles pour les animations et transitions
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+// Classes utilitaires
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.6s ease-out;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+// Style pour les boutons globaux
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(
+    45deg,
+    var(--oui-yellow),
+    var(--oui-yellow-light)
+  );
+  color: var(--oui-dark);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+
+  &:hover {
+    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.6);
+  }
+}
+
+.btn-secondary {
+  background: linear-gradient(
+    45deg,
+    var(--oui-purple),
+    var(--oui-purple-light)
+  );
+  color: white;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+
+  &:hover {
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+  }
+}
+
+.btn-success {
+  background: linear-gradient(
+    45deg,
+    var(--oui-success),
+    var(--oui-success-light)
+  );
+  color: white;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+
+  &:hover {
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.6);
+  }
+}
+
+// Responsive breakpoints
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

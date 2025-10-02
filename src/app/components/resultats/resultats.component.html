@@ -1,0 +1,123 @@
+@if (profils && profils.length > 0) {
+<div class="resultats-container">
+  <div class="container">
+    <div class="header-section">
+      <div class="celebration">🎉</div>
+      <h1 class="titre-principal">Tes résultats sont prêts !</h1>
+      <p class="sous-titre">
+        Découvre ton profil militant et comment tu contribues au mouvement
+      </p>
+    </div>
+
+    @if (profilPrincipal) {
+    <div class="profil-principal">
+      <div class="profil-hero" (click)="ouvrirDialogProfil(profilPrincipal)">
+        <div class="profil-badge">Ton profil principal</div>
+        <div class="profil-image-placeholder">
+          <span class="profil-emoji">{{
+            getEmojiPourProfil(profilPrincipal.nom)
+          }}</span>
+        </div>
+        <h2 class="profil-titre">{{ profilPrincipal.nom }}</h2>
+        <div class="profil-score">
+          <span class="score-numero">{{ profilPrincipal.score }}</span>
+          <span class="score-label">réponses correspondantes</span>
+        </div>
+        <p class="profil-description">
+          {{ profilPrincipal.description_courte }}
+        </p>
+
+        <div class="profil-conseils">
+          <h3>Comment t'impliquer davantage ?</h3>
+          <ul>
+            @for (conseil of getConseilsPourProfil(profilPrincipal.nom); track
+            conseil) {
+            <li>{{ conseil }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    } @if (autresProfils.length > 0) {
+    <div class="autres-profils">
+      <h3 class="section-titre">Tes autres traits militants</h3>
+      <div class="profils-grid">
+        @for (profil of autresProfils; track profil.nom; let i = $index) {
+        <div
+          class="profil-card"
+          [style.animation-delay.ms]="i * 100"
+          (click)="ouvrirDialogProfil(profil)"
+        >
+          <div class="profil-mini-icon">
+            {{ getEmojiPourProfil(profil.nom) }}
+          </div>
+          <h4 class="profil-mini-titre">{{ profil.nom }}</h4>
+          <div class="profil-mini-score">{{ profil.score }} pts</div>
+          <div class="profil-barre">
+            <div
+              class="profil-barre-remplie"
+              [style.width.%]="
+                profilPrincipal
+                  ? (profil.score / profilPrincipal.score) * 100
+                  : 0
+              "
+            ></div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    }
+
+    <div class="partage-section">
+      <h3>Partage tes résultats</h3>
+      <div class="partage-actions">
+        <button class="btn-partage" (click)="partagerResultats()">
+          <span class="btn-icon">📱</span>
+          <span class="btn-text">Partager</span>
+        </button>
+        <button class="btn-recommencer" (click)="recommencerQuiz()">
+          <span class="btn-icon">🔄</span>
+          <span class="btn-text">Refaire le quiz</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="engagement-section">
+      <div class="engagement-card">
+        <h3>Prêt·e à t'engager pour de vrai ?</h3>
+        <p>
+          Rejoins le mouvement OUI Québec et mets tes talents au service de
+          l'indépendance !
+        </p>
+        <div class="engagement-actions">
+          <a
+            href="https://ouiquebec.org"
+            target="_blank"
+            class="btn-engagement"
+          >
+            <span class="btn-text">Rejoindre OUI Québec</span>
+            <span class="btn-icon">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="resultats-background">
+    <div class="confetti">
+      @for (item of [].constructor(20); track $index; let idx = $index) {
+      <div class="confetti-piece" [style.animation-delay.ms]="idx * 100"></div>
+      }
+    </div>
+  </div>
+
+  <!-- Dialogue pour les détails du profil -->
+  <app-profil-dialog
+    [profil]="profil()"
+    [isOpen]="isDialogOpen()"
+    (close)="fermerDialog()"
+  >
+  </app-profil-dialog>
+</div>
+}

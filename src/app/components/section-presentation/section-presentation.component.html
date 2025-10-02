@@ -1,0 +1,55 @@
+@if (section) {
+<div class="section-presentation">
+  <div class="container">
+    <div class="section-card">
+      <div class="section-numero">Section {{ numeroSection }}</div>
+
+      <h1 class="section-titre">{{ section.section }}</h1>
+
+      <div class="section-info">
+        <div class="questions-count">
+          <span class="icon">📝</span>
+          {{ section.questions.length }} questions dans cette section
+        </div>
+
+        <div class="description">
+          <p>
+            Cette section explore tes préférences et ton style d'engagement
+            militant.
+          </p>
+          <p>
+            Réponds instinctivement, il n'y a pas de bonnes ou mauvaises
+            réponses !
+          </p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button
+          class="btn-commencer"
+          (click)="commencerSection()"
+          type="button"
+        >
+          <span class="btn-text">Commencer cette section</span>
+          <span class="btn-icon">🚀</span>
+        </button>
+      </div>
+
+      <div class="motivation">
+        <div class="motivation-card">
+          <span class="motivation-icon">💪</span>
+          <p>"Chaque réponse nous rapproche de ton profil militant unique !"</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-background">
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+}

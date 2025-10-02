@@ -1,0 +1,69 @@
+@if (question) {
+<div class="question-container">
+  <div class="question-card">
+    <div class="question-header">
+      <h2 class="question-titre">{{ question.question }}</h2>
+    </div>
+
+    <div class="choix-container">
+      @for (choix of question.choix; track choix.reponse; let i = $index) {
+      <div
+        class="choix-card"
+        (click)="selectionnerChoix(choix)"
+        [class.selected]="choixSelectionne === choix"
+        [style.animation-delay.ms]="i * 100"
+      >
+        <div class="choix-content">
+          <span class="choix-texte">{{ choix.reponse }}</span>
+          <div class="choix-indicator">
+            <span class="checkmark">✓</span>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="actions">
+      <button
+        class="btn-precedent"
+        (click)="precedent()"
+        [disabled]="!peutRetourner"
+      >
+        <span class="btn-icon">←</span>
+        <span class="btn-text">Précédent</span>
+      </button>
+
+      <div class="actions-centre">
+        <button class="btn-passer" (click)="passer()">
+          <span class="btn-text">Passer</span>
+          <span class="btn-icon">⏭️</span>
+        </button>
+      </div>
+
+      <button
+        class="btn-suivant"
+        (click)="suivant()"
+        [disabled]="!choixSelectionne"
+      >
+        <span class="btn-text">Suivant</span>
+        <span class="btn-icon">→</span>
+      </button>
+    </div>
+
+    <div class="actions-secondaires">
+      <button class="btn-recommencer" (click)="recommencer()">
+        <span class="btn-icon">🔄</span>
+        <span class="btn-text">Recommencer le quiz</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="question-background">
+    <div class="animated-bg">
+      <div class="bg-element bg-1"></div>
+      <div class="bg-element bg-2"></div>
+      <div class="bg-element bg-3"></div>
+    </div>
+  </div>
+</div>
+}

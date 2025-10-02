@@ -1,30 +1,68 @@
-# QuizProfilMilitant
+# Quiz Profil Militant - OUI Québec
+
+Une application de quiz de personnalité interactive pour découvrir son profil militant pour s'impliquer aux OUI Québec.
+
+## 🚀 Fonctionnalités
+
+- **Quiz interactif** avec 10 sections et ~30 questions
+- **5 profils militants** distincts avec descriptions détaillées
+- **Sauvegarde automatique** de la progression dans le localStorage
+- **Interface moderne** avec animations et transitions fluides
+- **Design responsive** optimisé pour mobile et desktop
+
+## 🎯 Profils militants
+
+1. **Le·la Soutien Discret·ète** - Organisation et logistique en coulisses
+2. **Le·la Stratège Intellectuel·le** - Arguments et analyses pour le mouvement
+3. **L'Artiste Militant·e** - Culture et créativité au service de la cause
+4. **Le·la Guerrier·ère du Terrain** - Action directe et visibilité publique
+5. **Le·la Chef·fe d'Orchestre** - Coordination et leadership du groupe
+
+## 📦 Installation et démarrage
+
+```bash
+# Installation des dépendances
+npm install
+
+# Démarrage du serveur de développement
+npm start
+
+# Build de production
+npm run build
+```
+
+L'application sera accessible sur `http://localhost:4200/`.
+
+## 🎨 Conception
+
+L'application utilise l'esthétique officielle d'OUI Québec avec :
+
+- Couleurs bleues et jaunes caractéristiques
+- Animations fluides et engageantes
+- Design moderne et accessible
+- Interface intuitive et amusante
+
+## 📱 Fonctionnalités techniques
+
+- **Progression sauvegardée** : Reprise automatique où on s'était arrêté
+- **Navigation fluide** : Retour en arrière, passage de questions
+- **Calcul dynamique** des scores et profils
+- **Partage des résultats** via Web Share API
+- **Confidentialité** : Aucune donnée envoyée aux serveurs
+
+## 🔐 Confidentialité
+
+Toutes les données sont stockées localement sur l'appareil de l'utilisateur. Aucune information n'est transmise aux serveurs d'OUI Québec.
+
+## 📄 Licence
+
+Propriété d'OUI Québec - 2025
+
+---
+
+## Angular CLI Information
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
-
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
 
 ## Building
 

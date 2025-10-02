@@ -1,0 +1,38 @@
+<div class="quiz-container">
+  <!-- Header de progression toujours visible sauf sur la page de résultats -->
+  @if (!progression().complete) {
+  <app-progression-header></app-progression-header>
+  }
+
+  <!-- Présentation de section -->
+  @if (!progression().complete && doitMontrerPresentationSection()) {
+  <app-section-presentation
+    [section]="sectionActuelle()"
+    [numeroSection]="progression().sectionActuelle + 1"
+    (commencer)="commencerSection()"
+  >
+  </app-section-presentation>
+  }
+
+  <!-- Question -->
+  @if (!progression().complete && !doitMontrerPresentationSection() &&
+  questionActuelle()) {
+  <app-question
+    [question]="questionActuelle()"
+    [peutRetourner]="peutRetourner()"
+    (choixEffectue)="repondreQuestion($event)"
+    (precedentDemande)="questionPrecedente()"
+    (passerDemande)="passerQuestion()"
+    (recommencerDemande)="recommencerQuiz()"
+  >
+  </app-question>
+  }
+
+  <!-- Résultats -->
+  @if (progression().complete && profils().length > 0) {
+  <app-resultats [profils]="profils()"> </app-resultats>
+  }
+
+  <!-- Footer toujours visible -->
+  <app-footer></app-footer>
+</div>

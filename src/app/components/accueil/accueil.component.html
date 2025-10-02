@@ -1,0 +1,53 @@
+<div class="accueil-container">
+  <div class="hero-section">
+    <div class="logo-animation">
+      <img src="/assets/logo-oui-quebec.svg" alt="OUI Québec" class="logo" />
+    </div>
+    <h1 class="titre-principal">Découvre ton profil militant</h1>
+    <p class="sous-titre">
+      Quel type de militant·e es-tu pour l'indépendance du Québec ?
+    </p>
+
+    <div class="card-presentation">
+      <h2>Un quiz personnalisé pour découvrir ton style d'engagement</h2>
+      <p>
+        Nous croyons que chaque personne à un rôle unique à jouer dans notre
+        mouvement. Peu importe ton style, il existe une façon pour toi de
+        contribuer à la cause de l'indépendance.
+      </p>
+    </div>
+
+    <div class="actions">
+      <button class="btn-primary" (click)="commencerQuiz()">
+        <span class="btn-text">Commencer le quiz</span>
+        <span class="btn-icon">→</span>
+      </button>
+    </div>
+
+    <div class="info-sections">
+      <p>Le quiz comprend 10 sections avec environ 30 questions</p>
+      <p>Durée estimée: 8-10 minutes</p>
+    </div>
+  </div>
+
+  <div class="profils-apercu">
+    <h3>Les {{ profils().length }} profils militants</h3>
+    <div class="profils-grid">
+      @for (profil of profils(); track profil.nom) {
+      <div class="profil-card" (click)="ouvrirDialogProfil(profil)">
+        <div class="profil-icon">{{ profil.icon }}</div>
+        <h4>{{ profil.nom }}</h4>
+        <p>{{ profil.description_courte }}</p>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-- Dialogue pour les détails du profil -->
+  <app-profil-dialog
+    [profil]="profil()"
+    [isOpen]="isDialogOpen()"
+    (close)="fermerDialog()"
+  >
+  </app-profil-dialog>
+</div>

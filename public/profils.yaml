@@ -1,0 +1,53 @@
+- nom : Activiste
+  description_courte : Le moteur de l'action
+  description_longue : Énergie du terrain, rend le message visible et mobilise rapidement face à l'actualité. Dynamique et motivante, elle pousse les autres à s'impliquer.
+  exemples_action : 
+    - Déploiement de bannières
+    - Distribution de tracts
+    - Actions de visibilité
+    - Création de contenus
+    - Logistique lors de rassemblements
+    - Mobilisation éclair
+  couleur : '#2a7a22'
+  emojis : '✊'
+- nom : Socio-culturel
+  description_courte : L'âme créative du mouvement
+  description_longue : Mobilise par la culture et crée des moments rassembleurs. Transforme les événements en expériences mémorables grâce à la créativité et à l'aspect humain.
+  exemples_action : 
+    - Organisation d'événements culturels
+    - Création de visuels et matériel promotionnel
+    - Mise en scène
+    - Ateliers participatifs et animation conviviale lors des rassemblements
+  couleur : '#027eb2'
+  emojis : '🥳'
+- nom : Idées
+  description_courte : Le-la stratège et vulgarisateur-rice
+  description_longue : Tu plonges dans les grands débats et analyses les enjeux en profondeur. Tu aimes éclairer les autres avec des faits clairs et des arguments solides. Ton expertise nourrit un discours cohérent, percutant et documenté.
+  exemples_action : 
+    - Partager ton expertise sur des sujets précis
+    - Animer des formations ou conférences
+    - Concevoir des guides et infographies
+    - Participer à des groupes de réflexion
+    - Proposer des arguments originaux et rédiger des articles ou tribunes
+  couleur : '#ffffff'
+  emojis : '💡'
+- nom : Introverti
+  description_courte : L'agent-e discret-e
+  description_longue : Apporte une force tranquille au mouvement en travaillant en arrière-plan. Privilégie les petits groupes et les contextes calmes, planifie avant d'agir et trouve sa satisfaction dans l'efficacité plutôt que dans la visibilité.
+  exemples_action :
+    - Collage d'affiches à son rythme
+    - Participation à de petites opérations de visibilité
+    - Recherche et rédaction de textes
+    - Soutien logistique.
+  couleur : '#d7200e'
+  emojis : '📣'
+- nom : Leader
+  description_courte : Le-la rassembleur-euse
+  description_longue : Coordonne, inspire et structure le mouvement. Garantit que chacun se sente impliqué et oriente les efforts vers des résultats concrets.
+  exemples_action :
+    - Animation d'équipes
+    - Planification stratégique
+    - Représentation publique
+    - Mentorat et accompagnement des nouveaux militantes.
+  couleur : '#f5a302'
+  emojis : '🚩'

@@ -1,0 +1,29 @@
+<div class="progression-header">
+  <div class="container">
+    <div class="section-info">
+      <h2 class="section-titre">{{ statistiques().sectionActuelle }}</h2>
+      <p class="questions-restantes">
+        {{ statistiques().questionsRestantes }} questions restantes
+      </p>
+    </div>
+
+    <div class="barre-progression">
+      <div class="barre-fond">
+        <div
+          class="barre-remplie"
+          [style.width.%]="statistiques().progressionPourcentage"
+        ></div>
+      </div>
+      <span class="pourcentage"
+        >{{ statistiques().progressionPourcentage | number : "1.0-0" }}%</span
+      >
+    </div>
+
+    <div class="score-info">
+      <span class="questions-count">
+        {{ statistiques().questionsRepondues }} /
+        {{ statistiques().totalQuestions }}
+      </span>
+    </div>
+  </div>
+</div>
