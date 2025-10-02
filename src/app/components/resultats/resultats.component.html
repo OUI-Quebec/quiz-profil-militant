@@ -17,7 +17,10 @@
     <div class="profil-principal">
       <div class="profil-hero" (click)="ouvrirDialogProfil(profilPrincipal)">
         <div class="profil-badge">Ton profil principal</div>
-        <div class="profil-image-placeholder">
+        <div
+          class="profil-image-placeholder"
+          [style.background-color]="getCouleurPourProfil(profilPrincipal.nom)"
+        >
           <app-lottie-emoji
             [emojiCode]="getEmojiCodePourProfil(profilPrincipal.nom)"
             [size]="64"
@@ -57,7 +60,10 @@
           [style.animation-delay.ms]="i * 100"
           (click)="ouvrirDialogProfil(profil)"
         >
-          <div class="profil-mini-icon">
+          <div
+            class="profil-mini-icon"
+            [style.background-color]="getCouleurPourProfil(profil.nom)"
+          >
             <app-lottie-emoji
               [emojiCode]="getEmojiCodePourProfil(profil.nom)"
               [size]="48"
@@ -68,6 +74,7 @@
           <div class="profil-barre">
             <div
               class="profil-barre-remplie"
+              [style.background-color]="getCouleurPourProfil(profil.nom)"
               [style.width.%]="
                 profilPrincipal
                   ? (profil.score / profilPrincipal.score) * 100
@@ -84,12 +91,25 @@
     <div class="partage-section">
       <h3>Partage tes résultats</h3>
       <div class="partage-actions">
-        <button class="btn-partage" (click)="partagerResultats()">
-          <span class="btn-icon">📱</span>
-          <span class="btn-text">Partager</span>
+        <button class="btn-partage btn-twitter" (click)="partagerSurX()">
+          <span class="btn-icon">𝕏</span>
+          <span class="btn-text">(Twitter)</span>
         </button>
-        <button class="btn-recommencer" (click)="recommencerQuiz()">
-          <span class="btn-icon">🔄</span>
+        <button
+          class="btn-recommencer"
+          (click)="recommencerQuiz()"
+          (mouseenter)="onHoverRefaire(true)"
+          (mouseleave)="onHoverRefaire(false)"
+        >
+          <span class="btn-icon">
+            <app-lottie-emoji
+              #refaireLottie
+              [emojiCode]="'1f91a'"
+              [size]="20"
+              [loop]="false"
+              [autoplay]="false"
+            ></app-lottie-emoji>
+          </span>
           <span class="btn-text">Refaire le quiz</span>
         </button>
       </div>
@@ -99,17 +119,27 @@
       <div class="engagement-card">
         <h3>Prêt·e à t'engager pour de vrai ?</h3>
         <p>
-          Rejoins le mouvement OUI Québec et mets tes talents au service de
+          Rejoins les OUI Québec et mets tes talents au service de
           l'indépendance !
         </p>
         <div class="engagement-actions">
           <a
-            href="https://ouiquebec.org"
+            href="https://www.ouiquebec.org/benevole"
             target="_blank"
             class="btn-engagement"
+            (mouseenter)="onHoverImplication(true)"
+            (mouseleave)="onHoverImplication(false)"
           >
-            <span class="btn-text">Rejoindre OUI Québec</span>
-            <span class="btn-icon">→</span>
+            <span class="btn-text">Implique toi!</span>
+            <span class="btn-icon">
+              <app-lottie-emoji
+                #implicationLottie
+                [emojiCode]="'1f449'"
+                [size]="24"
+                [loop]="false"
+                [autoplay]="false"
+              ></app-lottie-emoji>
+            </span>
           </a>
         </div>
       </div>

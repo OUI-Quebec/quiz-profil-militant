@@ -4,12 +4,18 @@ import { CommonModule } from '@angular/common';
 import { ProfilService } from '../../services/profil.service';
 import { ProfilDialogComponent } from '../profil-dialog/profil-dialog.component';
 import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
+import { FooterComponent } from '../footer/footer.component';
 import { Profil } from '../../model/profil';
 
 @Component({
   selector: 'app-accueil',
   standalone: true,
-  imports: [CommonModule, ProfilDialogComponent, LottieEmojiComponent],
+  imports: [
+    CommonModule,
+    ProfilDialogComponent,
+    LottieEmojiComponent,
+    FooterComponent,
+  ],
   templateUrl: './accueil.component.html',
   styleUrl: './accueil.component.scss',
 })

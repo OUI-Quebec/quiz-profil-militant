@@ -35,7 +35,7 @@
     <div class="profils-grid">
       @for (profil of profils(); track profil.nom) {
       <div class="profil-card" (click)="ouvrirDialogProfil(profil)">
-        <div class="profil-icon">
+        <div class="profil-icon" [style.background-color]="profil.couleur">
           <app-lottie-emoji
             [emojiCode]="profil.emojis"
             [size]="64"
@@ -55,4 +55,7 @@
     (close)="fermerDialog()"
   >
   </app-profil-dialog>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
 </div>

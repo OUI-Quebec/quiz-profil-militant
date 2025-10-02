@@ -75,7 +75,7 @@
 .card-presentation {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 2rem;
   margin: 2rem auto;
   max-width: 600px;
@@ -151,7 +151,7 @@
   padding: 1rem 3rem;
   font-size: 1.3rem;
   font-weight: 600;
-  border-radius: 50px;
+  border-radius: 8px;
   color: #1f2937;
   cursor: pointer;
   display: inline-flex;
@@ -179,7 +179,6 @@
   }
 
   &:hover {
-    transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 30px rgba(245, 158, 11, 0.6);
 
     &:before {
@@ -192,7 +191,7 @@
   }
 
   &:active {
-    transform: translateY(-1px) scale(1.02);
+    transform: scale(1.02);
   }
 
   .btn-icon {
@@ -245,14 +244,19 @@
   cursor: pointer;
 
   &:hover {
-    transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   }
 
   .profil-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
   }
 
   h4 {

@@ -3,10 +3,15 @@
   <div class="dialog-content">
     <div class="dialog-header">
       <h2 class="profil-nom">
-        <app-lottie-emoji
-          [emojiCode]="profil.emojis"
-          [size]="40"
-        ></app-lottie-emoji>
+        <span
+          class="profil-emoji-container"
+          [style.background-color]="profil.couleur"
+        >
+          <app-lottie-emoji
+            [emojiCode]="profil.emojis"
+            [size]="40"
+          ></app-lottie-emoji>
+        </span>
         {{ profil.nom }}
       </h2>
       <button class="btn-close" (click)="fermerDialog()" type="button">

@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, signal, computed } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  signal,
+  computed,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Profil } from '../../model/profil';
 import { QuizService } from '../../services/quiz.service';
@@ -15,6 +22,8 @@ import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 })
 export class ResultatsComponent implements OnInit {
   @Input() profils: Profil[] = [];
+  @ViewChild('implicationLottie') implicationLottie!: LottieEmojiComponent;
+  @ViewChild('refaireLottie') refaireLottie!: LottieEmojiComponent;
 
   profilPrincipal: Profil | null = null;
   autresProfils: Profil[] = [];
@@ -57,18 +66,39 @@ export class ResultatsComponent implements OnInit {
     return profilData?.description_longue || '';
   }
 
-  partagerResultats(): void {
-    if (this.profilPrincipal && navigator.share) {
-      navigator.share({
-        title: 'Mon profil militant OUI Québec',
-        text: `Je suis ${this.profilPrincipal.nom} ! Découvre ton profil militant pour l'indépendance du Québec.`,
-        url: window.location.origin,
-      });
-    } else {
-      // Fallback pour les navigateurs sans Web Share API
-      const text = `Je suis ${this.profilPrincipal?.nom} ! Découvre ton profil militant : ${window.location.origin}`;
-      navigator.clipboard.writeText(text);
-      alert('Lien copié dans le presse-papiers !');
+  getCouleurPourProfil(nom: string): string {
+    const profilData = this.profilService.getProfilParNom(nom);
+    return profilData?.couleur || '#3b82f6';
+  }
+
+  partagerSurX(): void {
+    if (this.profilPrincipal) {
+      const url = encodeURIComponent(window.location.origin);
+      const text = encodeURIComponent(
+        `Je suis ${this.profilPrincipal.nom} ! Découvre ton profil militant pour l'indépendance du Québec. ${window.location.origin}`
+      );
+      const twitterUrl = `https://twitter.com/intent/tweet?text=${text}`;
+      window.open(twitterUrl, '_blank', 'width=600,height=400');
+    }
+  }
+
+  onHoverImplication(isHovering: boolean): void {
+    if (this.implicationLottie) {
+      if (isHovering) {
+        this.implicationLottie.playAnimation();
+      } else {
+        this.implicationLottie.stopAnimation();
+      }
+    }
+  }
+
+  onHoverRefaire(isHovering: boolean): void {
+    if (this.refaireLottie) {
+      if (isHovering) {
+        this.refaireLottie.playAnimation();
+      } else {
+        this.refaireLottie.stopAnimation();
+      }
     }
   }
 

@@ -99,4 +99,16 @@ export class LottieEmojiComponent implements OnInit, OnDestroy, OnChanges {
       path: fallbackUrl,
     });
   }
+
+  public playAnimation() {
+    if (this.animation) {
+      this.animation.goToAndPlay(0);
+    }
+  }
+
+  public stopAnimation() {
+    if (this.animation) {
+      this.animation.goToAndStop(0);
+    }
+  }
 }
