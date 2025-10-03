@@ -442,11 +442,59 @@
 
     .actions {
       margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      padding: 0;
+
+      .actions-centre {
+        order: -1;
+        display: block;
+        margin-bottom: 0.5rem;
+        width: 100%;
+
+        .btn-passer {
+          width: 100% !important;
+          padding: 1rem;
+          font-size: 0.9rem;
+          justify-content: center;
+          display: flex;
+        }
+      }
+
+      .btn-precedent,
+      .btn-suivant {
+        width: 100%;
+        padding: 1rem;
+        font-size: 0.9rem;
+        justify-content: center;
+
+        .btn-icon {
+          font-size: 1rem;
+        }
+      }
+
+      .btn-precedent {
+        order: 1;
+      }
+
+      .btn-suivant {
+        order: 2;
+      }
     }
 
     .actions-secondaires {
       margin-top: 0;
       margin-bottom: 2rem;
+      display: block;
+      width: 100%;
+
+      .btn-recommencer {
+        width: 100% !important;
+        padding: 1rem;
+        font-size: 0.9rem;
+        justify-content: center;
+      }
     }
   }
 }
@@ -486,6 +534,36 @@
             margin-top: 2px;
           }
         }
+      }
+    }
+
+    .actions {
+      padding: 0;
+
+      .actions-centre {
+        width: 100%;
+
+        .btn-passer {
+          width: 100% !important;
+          padding: 0.9rem;
+          font-size: 0.85rem;
+        }
+      }
+
+      .btn-precedent,
+      .btn-suivant {
+        padding: 0.9rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    .actions-secondaires {
+      width: 100%;
+
+      .btn-recommencer {
+        width: 100% !important;
+        padding: 0.9rem;
+        font-size: 0.85rem;
       }
     }
   }
@@ -531,6 +609,34 @@
 
     .actions {
       margin-bottom: 0.5rem;
+      gap: 0.5rem;
+      padding: 0;
+
+      .actions-centre {
+        width: 100%;
+
+        .btn-passer {
+          width: 100% !important;
+          padding: 0.7rem 1rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      .btn-precedent,
+      .btn-suivant {
+        padding: 0.7rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    .actions-secondaires {
+      width: 100%;
+
+      .btn-recommencer {
+        width: 100% !important;
+        padding: 0.7rem 1rem;
+        font-size: 0.8rem;
+      }
     }
   }
 }
