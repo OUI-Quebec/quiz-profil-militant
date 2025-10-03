@@ -1,6 +1,5 @@
 .question-container {
-  height: calc(100vh - 120px);
-  max-height: calc(100vh - 120px);
+  min-height: 100vh;
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
   color: white;
   display: flex;
@@ -85,6 +84,7 @@
     position: relative;
     overflow: hidden;
     animation: choixSlide 0.5s ease-out both;
+    min-height: auto;
 
     &:before {
       content: "";
@@ -144,7 +144,7 @@
 
     .choix-content {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 1rem;
 
@@ -153,6 +153,9 @@
         font-size: 1.1rem;
         line-height: 1.4;
         font-weight: 500;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
       }
 
       .choix-indicator {
@@ -166,6 +169,7 @@
         justify-content: center;
         transition: all 0.3s ease;
         flex-shrink: 0;
+        margin-top: 2px;
 
         .checkmark {
           color: white;
@@ -370,39 +374,164 @@
 
 @media (max-width: 768px) {
   .question-container {
-    min-height: calc(100vh - 120px);
-    height: calc(100vh - 120px);
+    min-height: 100vh;
+    height: auto;
     padding: 0;
-    align-items: stretch;
-    justify-content: stretch;
+    align-items: flex-start;
+    justify-content: flex-start;
 
     .question-card {
-      padding: 0.8rem;
+      padding: 1rem;
       border-radius: 0;
       border: none;
       max-width: none;
       width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
+      height: auto;
+      min-height: 100vh;
+      max-height: none;
+      display: block;
       backdrop-filter: none;
       background: rgba(255, 255, 255, 0.05);
+      overflow: visible;
+    }
+
+    .question-header {
+      flex-shrink: 0;
+      margin-bottom: 1.5rem;
+
+      .question-titre {
+        font-size: 1.4rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+    }
+
+    .choix-container {
+      display: block;
+      margin-bottom: 2rem;
+
+      .choix-card {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        min-height: auto;
+        height: auto;
+
+        .choix-content {
+          align-items: flex-start;
+          min-height: auto;
+
+          .choix-texte {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            white-space: normal;
+          }
+
+          .choix-indicator {
+            margin-top: 2px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+
+    .actions {
+      margin-bottom: 1rem;
+    }
+
+    .actions-secondaires {
+      margin-top: 0;
+      margin-bottom: 2rem;
     }
   }
 }
 
 @media (max-width: 480px) {
   .question-container {
-    min-height: calc(100vh - 140px);
-    height: calc(100vh - 140px);
+    .question-card {
+      padding: 0.8rem;
+    }
+
+    .question-header {
+      margin-bottom: 1rem;
+
+      .question-titre {
+        font-size: 1.2rem;
+        line-height: 1.4;
+      }
+    }
+
+    .choix-container {
+      margin-bottom: 1.5rem;
+
+      .choix-card {
+        padding: 0.8rem;
+        margin-bottom: 0.8rem;
+        height: auto;
+
+        .choix-content {
+          .choix-texte {
+            font-size: 0.9rem;
+            line-height: 1.5;
+          }
+
+          .choix-indicator {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+          }
+        }
+      }
+    }
   }
 }
 
 @media (max-width: 850px) and (max-height: 500px) and (orientation: landscape) {
   .question-container {
-    min-height: calc(100vh - 100px);
-    height: calc(100vh - 100px);
+    .question-card {
+      padding: 0.8rem;
+    }
+
+    .question-header {
+      margin-bottom: 0.8rem;
+
+      .question-titre {
+        font-size: 1.1rem;
+        line-height: 1.3;
+      }
+    }
+
+    .choix-container {
+      margin-bottom: 1rem;
+
+      .choix-card {
+        padding: 0.6rem;
+        margin-bottom: 0.6rem;
+        height: auto;
+
+        .choix-content {
+          .choix-texte {
+            font-size: 0.85rem;
+            line-height: 1.4;
+          }
+
+          .choix-indicator {
+            width: 16px;
+            height: 16px;
+            margin-top: 1px;
+          }
+        }
+      }
+    }
+
+    .actions {
+      margin-bottom: 0.5rem;
+    }
   }
 }
 
