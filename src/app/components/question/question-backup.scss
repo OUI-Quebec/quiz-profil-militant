@@ -220,31 +220,9 @@
     }
   }
 
-  .actions-secondaires {
-    margin-top: 0.3rem;
-    display: flex;
-    justify-content: center;
-
-    .btn-recommencer {
-      background: rgba(239, 68, 68, 0.2);
-      border: 1px solid rgba(239, 68, 68, 0.4);
-      padding: 0.8rem 1.5rem;
-      border-radius: 30px;
-      color: #ef4444;
-      cursor: pointer;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background: rgba(239, 68, 68, 0.3);
-        border-color: rgba(239, 68, 68, 0.6);
-        transform: scale(1.05);
-      }
-    }
-  }
+      .actions-secondaires {
+      margin-top: 0.3rem;
+      .btn-recommencer {
 
   .question-background {
     position: absolute;
