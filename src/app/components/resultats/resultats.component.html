@@ -161,5 +161,17 @@
     (close)="fermerDialog()"
   >
   </app-profil-dialog>
+
+  <!-- Dialogue de confirmation pour recommencer -->
+  <app-dialog-confirmation
+    [isVisible]="showDialogRecommencer()"
+    titre="Recommencer le quiz"
+    message="Es-tu sûr·e de vouloir recommencer le quiz ? Toute ta progression sera perdue."
+    texteConfirmer="Recommencer"
+    texteAnnuler="Annuler"
+    (confirmer)="confirmerRecommencer()"
+    (annuler)="annulerRecommencer()"
+  >
+  </app-dialog-confirmation>
 </div>
 }

@@ -13,11 +13,17 @@ import { QuizService } from '../../services/quiz.service';
 import { ProfilService } from '../../services/profil.service';
 import { ProfilDialogComponent } from '../profil-dialog/profil-dialog.component';
 import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
+import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confirmation.component';
 
 @Component({
   selector: 'app-resultats',
   standalone: true,
-  imports: [CommonModule, ProfilDialogComponent, LottieEmojiComponent],
+  imports: [
+    CommonModule,
+    ProfilDialogComponent,
+    LottieEmojiComponent,
+    DialogConfirmationComponent,
+  ],
   templateUrl: './resultats.component.html',
   styleUrl: './resultats.component.scss',
 })
@@ -31,6 +37,7 @@ export class ResultatsComponent implements OnInit {
 
   private dialogOpen = signal(false);
   private profilSelectionne = signal<Profil | null>(null);
+  showDialogRecommencer = signal<boolean>(false);
 
   isDialogOpen = computed(() => this.dialogOpen());
   profil = computed(() => this.profilSelectionne());
@@ -115,16 +122,25 @@ export class ResultatsComponent implements OnInit {
   }
 
   recommencerQuiz(): void {
-    if (
-      confirm(
-        'Es-tu sûr·e de vouloir recommencer le quiz ? Toute ta progression sera perdue.'
-      )
-    ) {
-      // D'abord nettoyer les données via le service
-      this.quizService.recommencerQuiz();
+    this.showDialogRecommencer.set(true);
+  }
 
-      // Puis naviguer vers l'accueil avec le router Angular
-      this.router.navigate(['/']);
-    }
+  /**
+   * Confirme le redémarrage du quiz
+   */
+  confirmerRecommencer(): void {
+    this.showDialogRecommencer.set(false);
+    // D'abord nettoyer les données via le service
+    this.quizService.recommencerQuiz();
+
+    // Puis naviguer vers l'accueil avec le router Angular
+    this.router.navigate(['/']);
+  }
+
+  /**
+   * Annule le redémarrage du quiz
+   */
+  annulerRecommencer(): void {
+    this.showDialogRecommencer.set(false);
   }
 }

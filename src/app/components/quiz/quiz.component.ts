@@ -7,6 +7,7 @@ import { SectionPresentationComponent } from '../section-presentation/section-pr
 import { QuestionComponent } from '../question/question.component';
 import { ResultatsComponent } from '../resultats/resultats.component';
 import { FooterComponent } from '../footer/footer.component';
+import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confirmation.component';
 import { Choix } from '../../model/choix';
 
 @Component({
@@ -19,6 +20,7 @@ import { Choix } from '../../model/choix';
     QuestionComponent,
     ResultatsComponent,
     FooterComponent,
+    DialogConfirmationComponent,
   ],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss',
@@ -26,6 +28,7 @@ import { Choix } from '../../model/choix';
 export class QuizComponent {
   // Signaux locaux pour l'état de l'interface
   private sectionDejaCommencee = signal<number>(-1);
+  showDialogRecommencer = signal<boolean>(false);
 
   constructor(private quizService: QuizService, private router: Router) {}
 
@@ -107,16 +110,25 @@ export class QuizComponent {
    * Recommence le quiz depuis le début
    */
   recommencerQuiz(): void {
-    if (
-      confirm(
-        'Es-tu sûr·e de vouloir recommencer le quiz ? Toute ta progression sera perdue.'
-      )
-    ) {
-      this.quizService.recommencerQuiz();
-      this.sectionDejaCommencee.set(-1); // Réinitialiser l'état local
+    this.showDialogRecommencer.set(true);
+  }
 
-      // Naviguer vers l'accueil avec le router Angular
-      this.router.navigate(['/']);
-    }
+  /**
+   * Confirme le redémarrage du quiz
+   */
+  confirmerRecommencer(): void {
+    this.showDialogRecommencer.set(false);
+    this.quizService.recommencerQuiz();
+    this.sectionDejaCommencee.set(-1); // Réinitialiser l'état local
+
+    // Naviguer vers l'accueil avec le router Angular
+    this.router.navigate(['/']);
+  }
+
+  /**
+   * Annule le redémarrage du quiz
+   */
+  annulerRecommencer(): void {
+    this.showDialogRecommencer.set(false);
   }
 }
