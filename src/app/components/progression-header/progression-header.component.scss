@@ -56,22 +56,6 @@
         border-radius: 10px;
         transition: width 0.5s ease-out;
         position: relative;
-
-        &::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3),
-            transparent
-          );
-          animation: progressShimmer 2s ease-in-out infinite;
-        }
       }
     }
 
@@ -105,15 +89,6 @@
   100% {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-
-@keyframes progressShimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
   }
 }
 
