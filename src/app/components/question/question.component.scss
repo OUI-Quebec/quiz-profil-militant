@@ -23,15 +23,15 @@
   animation: cardSlideIn 0.6s ease-out;
   position: relative;
   z-index: 1;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
 
 .question-header {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0rem;
   flex-shrink: 0;
+  margin-bottom: 1rem;
 }
 
 .question-titre {
@@ -49,7 +49,6 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
   flex: 1;
-  overflow-y: auto;
 }
 
 .choix-card {
@@ -247,36 +246,40 @@
   }
 
   .question-card {
-    padding: 1rem;
+    padding: 0.75rem;
     border-radius: 0;
     border: none;
-    min-height: calc(100vh - 150px);
-    max-height: calc(100vh - 150px);
+    min-height: calc(100vh - 91px);
+    max-height: calc(100vh - 91px);
     display: flex;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.05);
-    overflow-y: auto;
     justify-content: space-evenly;
   }
 
   .question-header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
   }
 
   .question-titre {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
+    line-height: 1.3;
   }
 
   .choix-container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     margin-bottom: 0;
     flex: 0;
-    overflow-y: auto;
+    overflow: visible;
   }
 
   .choix-card {
-    margin-bottom: 1rem;
-    padding: 1rem;
+    margin-bottom: 0;
+    padding: 0.75rem;
+    min-height: auto;
   }
 
   .choix-texte {
@@ -292,7 +295,7 @@
   .actions {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.5rem;
     flex-shrink: 0;
   }
 
@@ -300,7 +303,7 @@
     order: -1;
     display: block;
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
   .btn-precedent {
@@ -315,7 +318,7 @@
   .btn-suivant,
   .btn-passer {
     width: 100% !important;
-    padding: 1rem;
+    padding: 0.75rem;
     font-size: 0.9rem;
   }
 
@@ -327,7 +330,7 @@
 
   .btn-recommencer {
     width: 100% !important;
-    padding: 1rem;
+    padding: 0.75rem;
     font-size: 0.9rem;
     justify-content: center;
   }
