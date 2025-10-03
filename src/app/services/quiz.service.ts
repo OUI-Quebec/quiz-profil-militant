@@ -111,16 +111,16 @@ export class QuizService {
       const response = await fetch('./quiz.yaml');
       const yamlText = await response.text();
       const sections = yaml.load(yamlText) as Section[];
-      
+
       // Mélanger les choix pour chaque question
-      const sectionsAvecChoixMelanges = sections.map(section => ({
+      const sectionsAvecChoixMelanges = sections.map((section) => ({
         ...section,
-        questions: section.questions.map(question => ({
+        questions: section.questions.map((question) => ({
           ...question,
-          choix: this.melangerTableau(question.choix)
-        }))
+          choix: this.melangerTableau(question.choix),
+        })),
       }));
-      
+
       this._sections.set(sectionsAvecChoixMelanges);
     } catch (error) {
       console.error('Erreur lors du chargement du quiz:', error);
