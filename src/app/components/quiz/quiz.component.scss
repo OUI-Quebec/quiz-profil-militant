@@ -5,12 +5,10 @@
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
   position: relative;
 
-  // Assure que le footer reste en bas
   > app-footer {
     margin-top: auto;
   }
 
-  // Animation globale de transition entre les étapes
   .quiz-content {
     flex: 1;
     animation: contentFadeIn 0.5s ease-out;
@@ -28,7 +26,6 @@
   }
 }
 
-// Style global pour les animations fluides
 * {
   transition: all 0.3s ease;
 }
