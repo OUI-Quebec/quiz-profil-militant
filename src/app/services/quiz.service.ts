@@ -92,6 +92,18 @@ export class QuizService {
   }
 
   /**
+   * Mélange aléatoirement un tableau en utilisant l'algorithme Fisher-Yates
+   */
+  private melangerTableau<T>(array: T[]): T[] {
+    const melange = [...array]; // Copie pour éviter de modifier l'original
+    for (let i = melange.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [melange[i], melange[j]] = [melange[j], melange[i]];
+    }
+    return melange;
+  }
+
+  /**
    * Charge les données du quiz depuis le fichier YAML
    */
   private async chargerQuiz(): Promise<void> {
@@ -99,7 +111,17 @@ export class QuizService {
       const response = await fetch('./quiz.yaml');
       const yamlText = await response.text();
       const sections = yaml.load(yamlText) as Section[];
-      this._sections.set(sections);
+      
+      // Mélanger les choix pour chaque question
+      const sectionsAvecChoixMelanges = sections.map(section => ({
+        ...section,
+        questions: section.questions.map(question => ({
+          ...question,
+          choix: this.melangerTableau(question.choix)
+        }))
+      }));
+      
+      this._sections.set(sectionsAvecChoixMelanges);
     } catch (error) {
       console.error('Erreur lors du chargement du quiz:', error);
     }

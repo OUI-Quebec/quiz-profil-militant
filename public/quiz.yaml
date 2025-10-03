@@ -14,7 +14,7 @@
           type : Leader
     - question : Dans un groupe, tu te sens plus à l’aise quand...
       choix :  
-        - reponse : Tu soutiens en arrière  -plan. 
+        - reponse : Tu soutiens en arrière-plan. 
           type : Introverti
         - reponse : Tu apportes des connaissances. 
           type : Idées
@@ -54,7 +54,7 @@
       choix :
         - reponse : Aider à l’installation et la logistique. 
           type : Introverti
-        - reponse : Donner une mini  -conférence. 
+        - reponse : Donner une mini-conférence. 
           type : Idées
         - reponse : Participer à une soirée musicale militante. 
           type : Socio-culturel
@@ -286,7 +286,7 @@
           type : Idées
         - reponse : Pinceau / guitare. 
           type : Socio-culturel
-        - reponse : Porte  -voix / tract. 
+        - reponse : Porte-voix / tract. 
           type : Activiste
         - reponse : Agenda / tableau blanc. 
           type : Leader
