@@ -62,6 +62,9 @@
   position: relative;
   overflow: hidden;
   animation: choixSlide 0.5s ease-out both;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
 }
 
 .choix-card:hover {
@@ -82,9 +85,10 @@
 
 .choix-content {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  width: 100%;
 }
 
 .choix-texte {
@@ -107,7 +111,6 @@
   justify-content: center;
   transition: all 0.3s ease;
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .checkmark {
@@ -154,6 +157,7 @@
   gap: 0.5rem;
   transition: all 0.3s ease;
   padding: 0.8rem 1.5rem;
+  justify-content: center;
 }
 
 .btn-precedent,
@@ -313,7 +317,6 @@
     width: 100% !important;
     padding: 1rem;
     font-size: 0.9rem;
-    justify-content: center;
   }
 
   .actions-secondaires {
