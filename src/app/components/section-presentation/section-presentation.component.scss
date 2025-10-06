@@ -1,7 +1,7 @@
 .section-presentation {
-  /* Hauteur plein écran moins le header sticky */
-  --hauteur-header: 68px; /* approx padding + contenu; ajustable */
-  min-height: calc(100vh - var(--hauteur-header));
+  /* Hauteur plein écran moins le header sticky (variable globale mise à jour dynamiquement) */
+  min-height: calc(100dvh - var(--hauteur-header));
+  height: calc(100dvh - var(--hauteur-header));
   /* Permet d'occuper l'espace restant sous le header */
   margin-top: 0;
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);

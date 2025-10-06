@@ -4,6 +4,7 @@ import {
   signal,
   inject,
   effect as ngEffect,
+  DestroyRef,
 } from '@angular/core';
 
 import { Router } from '@angular/router';
@@ -85,17 +86,35 @@ export class QuizComponent {
   // Ajuste dynamiquement la variable CSS --hauteur-header pour que
   // la présentation de section puisse utiliser calc(100vh - var(--hauteur-header))
   constructor() {
-    const headerObserver = new ResizeObserver(() =>
-      this.mettreAJourHauteurHeader()
-    );
-    queueMicrotask(() => {
-      const headerEl = document.querySelector('.progression-header');
-      if (headerEl) {
-        headerObserver.observe(headerEl);
-        this.mettreAJourHauteurHeader();
-      }
+    const destroyRef = inject(DestroyRef);
+    let headerObserver: ResizeObserver | null = null;
+
+    const maj = () => this.mettreAJourHauteurHeader();
+
+    // Différer après premier rendu macro + rAF pour stabilité (fonts, layout)
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        const headerEl = document.querySelector('.progression-header');
+        if (headerEl) {
+          if (!headerObserver) {
+            headerObserver = new ResizeObserver(() => maj());
+            headerObserver.observe(headerEl);
+          }
+          maj();
+        }
+      });
+    }, 0);
+
+    // Listeners supplémentaires (sécurise orientation / UI mobile)
+    const resizeHandler = () => maj();
+    window.addEventListener('resize', resizeHandler);
+    window.addEventListener('orientationchange', resizeHandler);
+
+    destroyRef.onDestroy(() => {
+      window.removeEventListener('resize', resizeHandler);
+      window.removeEventListener('orientationchange', resizeHandler);
+      if (headerObserver) headerObserver.disconnect();
     });
-    // Libération éventuelle non critique ici (composant racine du quiz)
   }
 
   private mettreAJourHauteurHeader(): void {
@@ -103,9 +122,15 @@ export class QuizComponent {
       '.progression-header'
     ) as HTMLElement | null;
     const root = document.documentElement;
-    if (headerEl && root) {
-      const h = headerEl.offsetHeight;
+    if (!root) return;
+    const h = headerEl?.offsetHeight;
+    if (h && h > 0) {
       root.style.setProperty('--hauteur-header', h + 'px');
+    }
+    // Met aussi une variable utilisant dvh (Chrome mobile moderne) si supporté
+    if (window?.visualViewport) {
+      const dvh = window.visualViewport.height;
+      if (dvh) root.style.setProperty('--viewport-hauteur', dvh + 'px');
     }
   }
 

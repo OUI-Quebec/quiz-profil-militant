@@ -31,6 +31,8 @@ body {
   --oui-dark: #1f2937;
   --oui-gray: #6b7280;
   --oui-light-gray: #e5e7eb;
+  /* Hauteur du header (ajustée dynamiquement ensuite par JS si présent) */
+  --hauteur-header: 78px;
 }
 
 // Styles pour les animations et transitions
