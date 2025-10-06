@@ -2,11 +2,10 @@
 <div class="resultats-container">
   <div class="container">
     <div class="header-section">
-      <app-lottie-emoji
-        [emojiCode]="'1f389'"
+      <app-lottie-emoji [emojiCode]="'1f389'"
         [size]="80"
         class="celebration"
-      ></app-lottie-emoji>
+       />
       <h1 class="titre-principal">Tes résultats sont prêts !</h1>
       <p class="sous-titre">
         Découvre ton profil militant et comment tu contribues au mouvement
@@ -21,11 +20,10 @@
           class="profil-image-placeholder"
           [style.background-color]="getCouleurPourProfil(profilPrincipal.nom)"
         >
-          <app-lottie-emoji
-            [emojiCode]="getEmojiCodePourProfil(profilPrincipal.nom)"
+          <app-lottie-emoji [emojiCode]="getEmojiCodePourProfil(profilPrincipal.nom)"
             [size]="64"
             class="profil-emoji"
-          ></app-lottie-emoji>
+           />
         </div>
         <h2 class="profil-titre">
           {{ profilPrincipal.nom }} -
@@ -64,10 +62,9 @@
             class="profil-mini-icon"
             [style.background-color]="getCouleurPourProfil(profil.nom)"
           >
-            <app-lottie-emoji
-              [emojiCode]="getEmojiCodePourProfil(profil.nom)"
+            <app-lottie-emoji [emojiCode]="getEmojiCodePourProfil(profil.nom)"
               [size]="48"
-            ></app-lottie-emoji>
+             />
           </div>
           <h4 class="profil-mini-titre">{{ profil.nom }}</h4>
           <div class="profil-mini-score">{{ profil.score }} pts</div>
@@ -102,13 +99,12 @@
           (mouseleave)="onHoverRefaire(false)"
         >
           <span class="btn-icon">
-            <app-lottie-emoji
-              #refaireLottie
+            <app-lottie-emoji #refaireLottie
               [emojiCode]="'1f91a'"
               [size]="20"
               [loop]="false"
               [autoplay]="false"
-            ></app-lottie-emoji>
+             />
           </span>
           <span class="btn-text">Refaire le quiz</span>
         </button>
@@ -132,13 +128,12 @@
           >
             <span class="btn-text">Implique toi!</span>
             <span class="btn-icon">
-              <app-lottie-emoji
-                #implicationLottie
+              <app-lottie-emoji #implicationLottie
                 [emojiCode]="'1f449'"
                 [size]="24"
                 [loop]="false"
                 [autoplay]="false"
-              ></app-lottie-emoji>
+               />
             </span>
           </a>
         </div>
@@ -155,23 +150,19 @@
   </div>
 
   <!-- Dialogue pour les détails du profil -->
-  <app-profil-dialog
-    [profil]="profil()!"
+  <app-profil-dialog [profil]="profil()!"
     [isOpen]="isDialogOpen()"
     (close)="fermerDialog()"
-  >
-  </app-profil-dialog>
+   />
 
   <!-- Dialogue de confirmation pour recommencer -->
-  <app-dialog-confirmation
-    [isVisible]="showDialogRecommencer()"
+  <app-dialog-confirmation [isVisible]="showDialogRecommencer()"
     titre="Recommencer le quiz"
     message="Es-tu sûr·e de vouloir recommencer le quiz ? Toute ta progression sera perdue."
     texteConfirmer="Recommencer"
     texteAnnuler="Annuler"
     (confirmer)="confirmerRecommencer()"
     (annuler)="annulerRecommencer()"
-  >
-  </app-dialog-confirmation>
+   />
 </div>
 }

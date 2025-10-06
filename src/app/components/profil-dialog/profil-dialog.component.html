@@ -7,10 +7,9 @@
           class="profil-emoji-container"
           [style.background-color]="profil().couleur"
         >
-          <app-lottie-emoji
-            [emojiCode]="profil().emojis"
+          <app-lottie-emoji [emojiCode]="profil().emojis"
             [size]="40"
-          ></app-lottie-emoji>
+           />
         </span>
         {{ profil().nom }}
       </h2>

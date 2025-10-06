@@ -1,50 +1,44 @@
 <div class="quiz-container">
   <!-- Header de progression toujours visible sauf sur la page de résultats -->
   @if (!progression().complete) {
-  <app-progression-header></app-progression-header>
+  <app-progression-header />
   }
 
   <!-- Présentation de section -->
   @if (!progression().complete && doitMontrerPresentationSection()) {
-  <app-section-presentation
-    [section]="sectionActuelle()"
+  <app-section-presentation [section]="sectionActuelle()"
     [numeroSection]="progression().sectionActuelle + 1"
     (commencer)="commencerSection()"
-  >
-  </app-section-presentation>
+   />
   }
 
   <!-- Question -->
   @if (!progression().complete && !doitMontrerPresentationSection() &&
   questionActuelle()) {
-  <app-question
-    [question]="questionActuelle()"
+  <app-question [question]="questionActuelle()"
     [peutRetourner]="peutRetourner()"
     (choixEffectue)="repondreQuestion($event)"
     (precedentDemande)="questionPrecedente()"
     (passerDemande)="passerQuestion()"
     (recommencerDemande)="recommencerQuiz()"
-  >
-  </app-question>
+   />
   }
 
   <!-- Résultats -->
   @if (progression().complete && profils().length > 0) {
-  <app-resultats [profils]="profils()"> </app-resultats>
+  <app-resultats [profils]="profils()" />
   }
 
   <!-- Footer toujours visible -->
-  <app-footer></app-footer>
+  <app-footer />
 
   <!-- Dialogue de confirmation pour recommencer -->
-  <app-dialog-confirmation
-    [isVisible]="showDialogRecommencer()"
+  <app-dialog-confirmation [isVisible]="showDialogRecommencer()"
     titre="Recommencer le quiz"
     message="Es-tu sûr·e de vouloir recommencer le quiz ? Toute ta progression sera perdue."
     texteConfirmer="Recommencer"
     texteAnnuler="Annuler"
     (confirmer)="confirmerRecommencer()"
     (annuler)="annulerRecommencer()"
-  >
-  </app-dialog-confirmation>
+   />
 </div>
