@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,14 +15,16 @@ export class DialogConfirmationComponent {
   readonly texteConfirmer = input<string>('Confirmer');
   readonly texteAnnuler = input<string>('Annuler');
 
-  @Output() confirmer = new EventEmitter<void>();
-  @Output() annuler = new EventEmitter<void>();
+  readonly confirmer = output<void>();
+  readonly annuler = output<void>();
 
   onConfirmer(): void {
+    // TODO: The 'emit' function requires a mandatory void argument
     this.confirmer.emit();
   }
 
   onAnnuler(): void {
+    // TODO: The 'emit' function requires a mandatory void argument
     this.annuler.emit();
   }
 

@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 import { Profil } from '../../model/profil';
@@ -13,9 +13,10 @@ import { Profil } from '../../model/profil';
 export class ProfilDialogComponent {
   readonly profil = input.required<Profil>();
   readonly isOpen = input(false);
-  @Output() close = new EventEmitter<void>();
+  readonly close = output<void>();
 
   fermerDialog(): void {
+    // TODO: The 'emit' function requires a mandatory void argument
     this.close.emit();
   }
 

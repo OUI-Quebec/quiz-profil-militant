@@ -1,9 +1,8 @@
 import {
   Component,
-  Output,
-  EventEmitter,
   ViewChild,
   input,
+  output
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Question } from '../../model/question';
@@ -20,10 +19,10 @@ import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 export class QuestionComponent {
   readonly question = input.required<Question>();
   readonly peutRetourner = input<boolean>(false);
-  @Output() choixEffectue = new EventEmitter<Choix>();
-  @Output() precedentDemande = new EventEmitter<void>();
-  @Output() passerDemande = new EventEmitter<void>();
-  @Output() recommencerDemande = new EventEmitter<void>();
+  readonly choixEffectue = output<Choix>();
+  readonly precedentDemande = output<void>();
+  readonly passerDemande = output<void>();
+  readonly recommencerDemande = output<void>();
 
   @ViewChild('precedentLottie') precedentLottie!: LottieEmojiComponent;
   @ViewChild('suivantLottie') suivantLottie!: LottieEmojiComponent;
@@ -44,14 +43,17 @@ export class QuestionComponent {
   }
 
   precedent(): void {
+    // TODO: The 'emit' function requires a mandatory void argument
     this.precedentDemande.emit();
   }
 
   passer(): void {
+    // TODO: The 'emit' function requires a mandatory void argument
     this.passerDemande.emit();
   }
 
   recommencer(): void {
+    // TODO: The 'emit' function requires a mandatory void argument
     this.recommencerDemande.emit();
   }
 

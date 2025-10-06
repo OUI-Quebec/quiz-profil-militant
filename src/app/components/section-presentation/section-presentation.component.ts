@@ -1,9 +1,8 @@
 import {
   Component,
-  Output,
-  EventEmitter,
   ViewChild,
   input,
+  output
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Section } from '../../model/section';
@@ -19,12 +18,13 @@ import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 export class SectionPresentationComponent {
   readonly section = input.required<Section>();
   readonly numeroSection = input<number>(1);
-  @Output() commencer = new EventEmitter<void>();
+  readonly commencer = output<void>();
 
   @ViewChild('commencerSectionLottie')
   commencerSectionLottie!: LottieEmojiComponent;
 
   commencerSection(): void {
+    // TODO: The 'emit' function requires a mandatory void argument
     this.commencer.emit();
   }
 
