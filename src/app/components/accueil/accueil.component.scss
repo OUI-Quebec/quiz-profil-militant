@@ -1,9 +1,13 @@
 .accueil-container {
-  min-height: 100vh;
+  /* Hauteur minimale plein écran, mais la page peut s'étendre et défiler */
+  min-height: calc(var(--viewport-hauteur, 100dvh));
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
   color: white;
-  overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* empêcher scroll horizontal */
+  box-sizing: border-box;
 
   &::before {
     content: "";
@@ -28,10 +32,15 @@
 }
 
 .hero-section {
-  padding: 3rem 2rem;
+  padding: clamp(1.8rem, 4.5vh, 2.6rem) 1.8rem 1.5rem;
   text-align: center;
   position: relative;
   z-index: 1;
+  flex: 0 0 auto; /* taille intrinsèque; ne scroll pas */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .logo-animation {
@@ -48,12 +57,9 @@
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(45deg, #fef3c7, #ffffff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  animation: titleGlow 2s ease-in-out infinite alternate;
+  color: #fef3c7; /* Couleur statique uniforme */
+  text-shadow: none;
+  animation: none;
 }
 
 @keyframes titleGlow {
@@ -142,7 +148,7 @@
 }
 
 .actions {
-  margin: 3rem 0;
+  margin: 2.5rem 0 2rem;
 }
 
 .btn-primary {
@@ -205,9 +211,10 @@
   }
 }
 
+/* Section profils sous le bloc héro mais avant le footer */
 .profils-apercu {
   background: rgba(255, 255, 255, 0.05);
-  padding: 3rem 2rem;
+  padding: 2rem 1.5rem 1.75rem;
   position: relative;
   z-index: 1;
 
@@ -216,6 +223,26 @@
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #fef3c7;
+  }
+}
+
+app-footer {
+  margin-top: 0;
+}
+
+/* Réduire la grille si peu de hauteur; éviter push footer hors écran */
+@media (max-height: 700px) {
+  .profils-apercu {
+    padding: 1.25rem 1rem 1rem;
+  }
+  .hero-section {
+    padding: 1.5rem 1.25rem 1rem;
+  }
+  .card-presentation {
+    margin: 1.25rem auto;
+  }
+  .actions {
+    margin: 1.75rem 0 1.25rem;
   }
 }
 

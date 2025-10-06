@@ -1,11 +1,4 @@
-import {
-  Component,
-  computed,
-  signal,
-  inject,
-  effect as ngEffect,
-  DestroyRef,
-} from '@angular/core';
+import { Component, computed, signal, inject, DestroyRef } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { QuizService } from '../../services/quiz.service';

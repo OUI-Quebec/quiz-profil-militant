@@ -30,6 +30,17 @@ export class QuestionComponent {
 
   choixSelectionne: Choix | null = null;
 
+  private isMobile(): boolean {
+    return (
+      typeof window !== 'undefined' &&
+      window.matchMedia('(max-width: 768px)').matches
+    );
+  }
+
+  emojiSize(): number {
+    return this.isMobile() ? 20 : 28;
+  }
+
   selectionnerChoix(choix: Choix): void {
     this.choixSelectionne = choix;
   }

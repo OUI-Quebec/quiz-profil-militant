@@ -186,13 +186,16 @@
 .btn-precedent,
 .btn-suivant {
   background: linear-gradient(45deg, #6366f1, #8b5cf6);
-  color: white;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+  font-weight: 600;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }
 
 .btn-precedent:hover:not(:disabled),
 .btn-suivant:hover:not(:disabled) {
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 6px 22px rgba(99, 102, 241, 0.55);
+  filter: brightness(1.05);
 }
 
 .btn-precedent:disabled,
@@ -202,14 +205,18 @@
 }
 
 .btn-passer {
-  background: rgba(245, 158, 11, 0.2);
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  color: #fbbf24;
+  /* Amélioration contraste: gradient chaud + texte foncé lisible */
+  background: linear-gradient(45deg, #f59e0b, #fbbf24);
+  border: 1px solid #f59e0b;
+  color: #1f2937; /* gris très foncé pour contraste WCAG */
+  font-weight: 600;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .btn-passer:hover {
-  background: rgba(245, 158, 11, 0.3);
-  border-color: rgba(245, 158, 11, 0.6);
+  background: linear-gradient(45deg, #fbbf24, #f59e0b);
+  border-color: #d97706;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.45);
 }
 
 /* Bouton recommencer collé sous les actions mais contenu toujours visible */
@@ -222,23 +229,46 @@
 }
 
 .btn-recommencer {
-  border: none;
+  border: 1px solid #dc2626;
   border-radius: 30px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   transition: all 0.3s ease;
-  padding: 0.8rem 1.5rem;
-  background: rgba(239, 68, 68, 0.2);
-  border: 1px solid rgba(239, 68, 68, 0.4);
-  color: #ef4444;
+  padding: 0.85rem 1.55rem;
+  background: linear-gradient(45deg, #ef4444, #f87171);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35);
 }
 
 .btn-recommencer:hover {
-  background: rgba(239, 68, 68, 0.3);
-  border-color: rgba(239, 68, 68, 0.6);
+  background: linear-gradient(45deg, #f87171, #ef4444);
+  border-color: #b91c1c;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+}
+
+/* États focus accessibles */
+.btn-passer:focus-visible,
+.btn-recommencer:focus-visible,
+.btn-precedent:focus-visible,
+.btn-suivant:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Ajustements sur mobile pour conserver lisibilité */
+@media (max-width: 768px) {
+  .btn-passer {
+    font-size: 1rem;
+    padding: 1rem 1.05rem;
+  }
+  .btn-recommencer {
+    font-size: 1rem;
+    padding: 1rem 1.05rem;
+  }
 }
 
 @keyframes cardSlideIn {
@@ -348,8 +378,8 @@
   .btn-suivant,
   .btn-passer {
     width: 100% !important;
-    padding: 0.9rem 1.05rem;
-    font-size: 0.98rem;
+    padding: 0.95rem 1.15rem;
+    font-size: 1rem;
   }
 
   .actions-secondaires {
@@ -392,8 +422,8 @@
   .btn-suivant,
   .btn-passer,
   .btn-recommencer {
-    padding: 0.9rem;
-    font-size: 0.85rem;
+    padding: 0.95rem 1.15rem;
+    font-size: 1rem;
   }
 }
 

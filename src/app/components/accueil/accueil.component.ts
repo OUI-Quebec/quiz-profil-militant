@@ -68,4 +68,19 @@ export class AccueilComponent {
       }
     }
   }
+
+  constructor() {
+    // Ajuste une variable CSS fiable pour la hauteur visible (utile mobile iOS/Android)
+    const majViewport = () => {
+      if (typeof window === 'undefined') return;
+      const vh = window.innerHeight;
+      document.documentElement.style.setProperty(
+        '--viewport-hauteur',
+        vh + 'px'
+      );
+    };
+    majViewport();
+    window.addEventListener('resize', majViewport);
+    window.addEventListener('orientationchange', majViewport);
+  }
 }
