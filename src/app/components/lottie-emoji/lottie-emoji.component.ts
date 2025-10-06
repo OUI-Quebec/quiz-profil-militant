@@ -4,8 +4,8 @@ import {
   OnDestroy,
   OnChanges,
   ElementRef,
-  ViewChild,
-  input
+  input,
+  viewChild
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import lottie, { AnimationItem } from 'lottie-web';
@@ -37,7 +37,7 @@ export class LottieEmojiComponent implements OnInit, OnDestroy, OnChanges {
   readonly loop = input<boolean>(true);
   readonly autoplay = input<boolean>(true);
 
-  @ViewChild('lottieContainer', { static: true }) lottieContainer!: ElementRef;
+  readonly lottieContainer = viewChild.required<ElementRef>('lottieContainer');
 
   private animation: AnimationItem | null = null;
 
@@ -68,7 +68,7 @@ export class LottieEmojiComponent implements OnInit, OnDestroy, OnChanges {
     const animationUrl = `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiCode}/lottie.json`;
 
     this.animation = lottie.loadAnimation({
-      container: this.lottieContainer.nativeElement,
+      container: this.lottieContainer().nativeElement,
       renderer: 'svg',
       loop: this.loop(),
       autoplay: this.autoplay(),
@@ -93,7 +93,7 @@ export class LottieEmojiComponent implements OnInit, OnDestroy, OnChanges {
       'https://fonts.gstatic.com/s/e/notoemoji/latest/1f642/lottie.json';
 
     this.animation = lottie.loadAnimation({
-      container: this.lottieContainer.nativeElement,
+      container: this.lottieContainer().nativeElement,
       renderer: 'svg',
       loop: this.loop(),
       autoplay: this.autoplay(),

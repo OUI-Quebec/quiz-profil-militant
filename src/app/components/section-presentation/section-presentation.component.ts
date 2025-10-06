@@ -1,9 +1,4 @@
-import {
-  Component,
-  ViewChild,
-  input,
-  output
-} from '@angular/core';
+import { Component, input, output, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Section } from '../../model/section';
 import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
@@ -20,20 +15,21 @@ export class SectionPresentationComponent {
   readonly numeroSection = input<number>(1);
   readonly commencer = output<void>();
 
-  @ViewChild('commencerSectionLottie')
-  commencerSectionLottie!: LottieEmojiComponent;
+  readonly commencerSectionLottie = viewChild.required<LottieEmojiComponent>(
+    'commencerSectionLottie'
+  );
 
   commencerSection(): void {
-    // TODO: The 'emit' function requires a mandatory void argument
     this.commencer.emit();
   }
 
   onHoverCommencerSection(isHovering: boolean): void {
-    if (this.commencerSectionLottie) {
+    const commencerSectionLottie = this.commencerSectionLottie();
+    if (commencerSectionLottie) {
       if (isHovering) {
-        this.commencerSectionLottie.playAnimation();
+        commencerSectionLottie.playAnimation();
       } else {
-        this.commencerSectionLottie.stopAnimation();
+        commencerSectionLottie.stopAnimation();
       }
     }
   }

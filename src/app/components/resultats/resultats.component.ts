@@ -3,8 +3,8 @@ import {
   OnInit,
   signal,
   computed,
-  ViewChild,
-  input
+  input,
+  viewChild
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -29,8 +29,8 @@ import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confi
 })
 export class ResultatsComponent implements OnInit {
   readonly profils = input<Profil[]>([]);
-  @ViewChild('implicationLottie') implicationLottie!: LottieEmojiComponent;
-  @ViewChild('refaireLottie') refaireLottie!: LottieEmojiComponent;
+  readonly implicationLottie = viewChild.required<LottieEmojiComponent>('implicationLottie');
+  readonly refaireLottie = viewChild.required<LottieEmojiComponent>('refaireLottie');
 
   profilPrincipal: Profil | null = null;
   autresProfils: Profil[] = [];
@@ -93,21 +93,23 @@ export class ResultatsComponent implements OnInit {
   }
 
   onHoverImplication(isHovering: boolean): void {
-    if (this.implicationLottie) {
+    const implicationLottie = this.implicationLottie();
+    if (implicationLottie) {
       if (isHovering) {
-        this.implicationLottie.playAnimation();
+        implicationLottie.playAnimation();
       } else {
-        this.implicationLottie.stopAnimation();
+        implicationLottie.stopAnimation();
       }
     }
   }
 
   onHoverRefaire(isHovering: boolean): void {
-    if (this.refaireLottie) {
+    const refaireLottie = this.refaireLottie();
+    if (refaireLottie) {
       if (isHovering) {
-        this.refaireLottie.playAnimation();
+        refaireLottie.playAnimation();
       } else {
-        this.refaireLottie.stopAnimation();
+        refaireLottie.stopAnimation();
       }
     }
   }

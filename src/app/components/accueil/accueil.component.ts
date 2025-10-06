@@ -1,4 +1,4 @@
-import { Component, computed, signal, ViewChild } from '@angular/core';
+import { Component, computed, signal, viewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProfilService } from '../../services/profil.service';
@@ -20,7 +20,7 @@ import { Profil } from '../../model/profil';
   styleUrl: './accueil.component.scss',
 })
 export class AccueilComponent {
-  @ViewChild('commencerLottie') commencerLottie!: LottieEmojiComponent;
+  readonly commencerLottie = viewChild.required<LottieEmojiComponent>('commencerLottie');
 
   // Signal pour le dialogue
   private dialogOpen = signal(false);
@@ -62,11 +62,12 @@ export class AccueilComponent {
   }
 
   onHoverCommencer(isHovering: boolean): void {
-    if (this.commencerLottie) {
+    const commencerLottie = this.commencerLottie();
+    if (commencerLottie) {
       if (isHovering) {
-        this.commencerLottie.playAnimation();
+        commencerLottie.playAnimation();
       } else {
-        this.commencerLottie.stopAnimation();
+        commencerLottie.stopAnimation();
       }
     }
   }

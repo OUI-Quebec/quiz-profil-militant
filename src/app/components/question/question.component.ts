@@ -1,9 +1,4 @@
-import {
-  Component,
-  ViewChild,
-  input,
-  output
-} from '@angular/core';
+import { Component, input, output, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Question } from '../../model/question';
 import { Choix } from '../../model/choix';
@@ -24,10 +19,14 @@ export class QuestionComponent {
   readonly passerDemande = output<void>();
   readonly recommencerDemande = output<void>();
 
-  @ViewChild('precedentLottie') precedentLottie!: LottieEmojiComponent;
-  @ViewChild('suivantLottie') suivantLottie!: LottieEmojiComponent;
-  @ViewChild('passerLottie') passerLottie!: LottieEmojiComponent;
-  @ViewChild('recommencerLottie') recommencerLottie!: LottieEmojiComponent;
+  readonly precedentLottie =
+    viewChild.required<LottieEmojiComponent>('precedentLottie');
+  readonly suivantLottie =
+    viewChild.required<LottieEmojiComponent>('suivantLottie');
+  readonly passerLottie =
+    viewChild.required<LottieEmojiComponent>('passerLottie');
+  readonly recommencerLottie =
+    viewChild.required<LottieEmojiComponent>('recommencerLottie');
 
   choixSelectionne: Choix | null = null;
 
@@ -43,56 +42,57 @@ export class QuestionComponent {
   }
 
   precedent(): void {
-    // TODO: The 'emit' function requires a mandatory void argument
     this.precedentDemande.emit();
   }
 
   passer(): void {
-    // TODO: The 'emit' function requires a mandatory void argument
     this.passerDemande.emit();
   }
 
   recommencer(): void {
-    // TODO: The 'emit' function requires a mandatory void argument
     this.recommencerDemande.emit();
   }
 
   onHoverPrecedent(isHovering: boolean): void {
-    if (this.precedentLottie) {
+    const precedentLottie = this.precedentLottie();
+    if (precedentLottie) {
       if (isHovering) {
-        this.precedentLottie.playAnimation();
+        precedentLottie.playAnimation();
       } else {
-        this.precedentLottie.stopAnimation();
+        precedentLottie.stopAnimation();
       }
     }
   }
 
   onHoverSuivant(isHovering: boolean): void {
-    if (this.suivantLottie) {
+    const suivantLottie = this.suivantLottie();
+    if (suivantLottie) {
       if (isHovering) {
-        this.suivantLottie.playAnimation();
+        suivantLottie.playAnimation();
       } else {
-        this.suivantLottie.stopAnimation();
+        suivantLottie.stopAnimation();
       }
     }
   }
 
   onHoverPasser(isHovering: boolean): void {
-    if (this.passerLottie) {
+    const passerLottie = this.passerLottie();
+    if (passerLottie) {
       if (isHovering) {
-        this.passerLottie.playAnimation();
+        passerLottie.playAnimation();
       } else {
-        this.passerLottie.stopAnimation();
+        passerLottie.stopAnimation();
       }
     }
   }
 
   onHoverRecommencer(isHovering: boolean): void {
-    if (this.recommencerLottie) {
+    const recommencerLottie = this.recommencerLottie();
+    if (recommencerLottie) {
       if (isHovering) {
-        this.recommencerLottie.playAnimation();
+        recommencerLottie.playAnimation();
       } else {
-        this.recommencerLottie.stopAnimation();
+        recommencerLottie.stopAnimation();
       }
     }
   }

@@ -19,12 +19,10 @@ export class DialogConfirmationComponent {
   readonly annuler = output<void>();
 
   onConfirmer(): void {
-    // TODO: The 'emit' function requires a mandatory void argument
     this.confirmer.emit();
   }
 
   onAnnuler(): void {
-    // TODO: The 'emit' function requires a mandatory void argument
     this.annuler.emit();
   }
 
