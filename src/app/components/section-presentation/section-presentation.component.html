@@ -3,12 +3,12 @@
     <div class="section-card">
       <div class="section-numero">Section {{ numeroSection() }}</div>
 
-      <h1 class="section-titre">{{ section().section }}</h1>
+      <h1 class="section-titre">{{ section()?.section }}</h1>
 
       <div class="section-info">
         <div class="questions-count">
           <span class="icon">📝</span>
-          {{ section().questions.length }} questions dans cette section
+          {{ section()?.questions?.length ?? 0 }} questions dans cette section
         </div>
       </div>
 
@@ -22,12 +22,13 @@
         >
           <span class="btn-text">Commencer cette section</span>
           <span class="btn-icon">
-            <app-lottie-emoji #commencerSectionLottie
+            <app-lottie-emoji
+              #commencerSectionLottie
               [emojiCode]="'1f680'"
               [size]="24"
               [loop]="false"
               [autoplay]="false"
-             />
+            />
           </span>
         </button>
       </div>

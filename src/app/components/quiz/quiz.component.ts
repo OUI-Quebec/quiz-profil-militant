@@ -1,4 +1,10 @@
-import { Component, computed, signal, inject } from '@angular/core';
+import {
+  Component,
+  computed,
+  signal,
+  inject,
+  effect as ngEffect,
+} from '@angular/core';
 
 import { Router } from '@angular/router';
 import { QuizService } from '../../services/quiz.service';
@@ -19,8 +25,8 @@ import { Choix } from '../../model/choix';
     QuestionComponent,
     ResultatsComponent,
     FooterComponent,
-    DialogConfirmationComponent
-],
+    DialogConfirmationComponent,
+  ],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss',
 })
@@ -75,6 +81,33 @@ export class QuizComponent {
 
     return !aDejaReponduCetteSection && indexQuestion === 0;
   });
+
+  // Ajuste dynamiquement la variable CSS --hauteur-header pour que
+  // la présentation de section puisse utiliser calc(100vh - var(--hauteur-header))
+  constructor() {
+    const headerObserver = new ResizeObserver(() =>
+      this.mettreAJourHauteurHeader()
+    );
+    queueMicrotask(() => {
+      const headerEl = document.querySelector('.progression-header');
+      if (headerEl) {
+        headerObserver.observe(headerEl);
+        this.mettreAJourHauteurHeader();
+      }
+    });
+    // Libération éventuelle non critique ici (composant racine du quiz)
+  }
+
+  private mettreAJourHauteurHeader(): void {
+    const headerEl = document.querySelector(
+      '.progression-header'
+    ) as HTMLElement | null;
+    const root = document.documentElement;
+    if (headerEl && root) {
+      const h = headerEl.offsetHeight;
+      root.style.setProperty('--hauteur-header', h + 'px');
+    }
+  }
 
   /**
    * Commence la section actuelle (cache la présentation)

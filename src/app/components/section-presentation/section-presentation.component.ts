@@ -11,7 +11,8 @@ import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
   styleUrl: './section-presentation.component.scss',
 })
 export class SectionPresentationComponent {
-  readonly section = input.required<Section>();
+  // Peut être null transitoirement si le parent ne fournit pas encore la section
+  readonly section = input<Section | null>(null);
   readonly numeroSection = input<number>(1);
   readonly commencer = output<void>();
 
