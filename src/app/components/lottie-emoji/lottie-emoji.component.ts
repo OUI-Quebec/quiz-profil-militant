@@ -1,4 +1,12 @@
-import { Component, OnInit, OnDestroy, OnChanges, ElementRef, input, viewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  OnChanges,
+  ElementRef,
+  input,
+  viewChild,
+} from '@angular/core';
 
 import lottie, { AnimationItem } from 'lottie-web';
 
@@ -73,7 +81,6 @@ export class LottieEmojiComponent implements OnInit, OnDestroy, OnChanges {
       // Fallback vers un emoji par défaut
       this.loadFallbackEmoji();
     });
-
   }
 
   private loadFallbackEmoji() {
@@ -105,5 +112,4 @@ export class LottieEmojiComponent implements OnInit, OnDestroy, OnChanges {
       this.animation.goToAndStop(0);
     }
   }
-
 }

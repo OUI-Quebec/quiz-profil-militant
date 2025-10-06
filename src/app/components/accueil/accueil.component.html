@@ -26,7 +26,8 @@
       >
         <span class="btn-text">Commencer le quiz</span>
         <span class="btn-icon">
-          <app-lottie-emoji #commencerLottie
+          <app-lottie-emoji
+            #commencerLottie
             [emojiCode]="'1f449'"
             [size]="32"
             [loop]="false"
@@ -48,9 +49,7 @@
       @for (profil of profils(); track profil.nom) {
       <div class="profil-card" (click)="ouvrirDialogProfil(profil)">
         <div class="profil-icon" [style.background-color]="profil.couleur">
-          <app-lottie-emoji [emojiCode]="profil.emojis"
-            [size]="64"
-           />
+          <app-lottie-emoji [emojiCode]="profil.emojis" [size]="64" />
         </div>
         <h4>{{ profil.nom }}</h4>
         <p>{{ profil.description_courte }}</p>
@@ -60,10 +59,11 @@
   </div>
 
   <!-- Dialogue pour les détails du profil -->
-  <app-profil-dialog [profil]="profil()!"
+  <app-profil-dialog
+    [profil]="profil()!"
     [isOpen]="isDialogOpen()"
     (close)="fermerDialog()"
-   />
+  />
 
   <!-- Footer -->
   <app-footer />
