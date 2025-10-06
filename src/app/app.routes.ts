@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { AccueilComponent } from './components/accueil/accueil.component';
-import { QuizComponent } from './components/quiz/quiz.component';
+
+
 
 export const routes: Routes = [
-  { path: '', component: AccueilComponent },
-  { path: 'quiz', component: QuizComponent },
+  { path: '', loadComponent: () => import('./components/accueil/accueil.component').then(m => m.AccueilComponent) },
+  { path: 'quiz', loadComponent: () => import('./components/quiz/quiz.component').then(m => m.QuizComponent) },
   { path: '**', redirectTo: '' },
 ];
