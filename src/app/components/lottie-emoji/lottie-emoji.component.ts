@@ -1,11 +1,11 @@
 import {
   Component,
-  Input,
   OnInit,
   OnDestroy,
   OnChanges,
   ElementRef,
   ViewChild,
+  input
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import lottie, { AnimationItem } from 'lottie-web';
@@ -18,8 +18,8 @@ import lottie, { AnimationItem } from 'lottie-web';
     <div
       #lottieContainer
       class="lottie-emoji"
-      [style.width.px]="size"
-      [style.height.px]="size"
+      [style.width.px]="size()"
+      [style.height.px]="size()"
     ></div>
   `,
   styles: [
@@ -32,10 +32,10 @@ import lottie, { AnimationItem } from 'lottie-web';
   ],
 })
 export class LottieEmojiComponent implements OnInit, OnDestroy, OnChanges {
-  @Input() emojiCode: string = '';
-  @Input() size: number = 48;
-  @Input() loop: boolean = true;
-  @Input() autoplay: boolean = true;
+  readonly emojiCode = input<string>('');
+  readonly size = input<number>(48);
+  readonly loop = input<boolean>(true);
+  readonly autoplay = input<boolean>(true);
 
   @ViewChild('lottieContainer', { static: true }) lottieContainer!: ElementRef;
 
@@ -60,23 +60,24 @@ export class LottieEmojiComponent implements OnInit, OnDestroy, OnChanges {
       this.animation.destroy();
     }
 
-    if (!this.emojiCode) {
+    const emojiCode = this.emojiCode();
+    if (!emojiCode) {
       return;
     }
 
-    const animationUrl = `https://fonts.gstatic.com/s/e/notoemoji/latest/${this.emojiCode}/lottie.json`;
+    const animationUrl = `https://fonts.gstatic.com/s/e/notoemoji/latest/${emojiCode}/lottie.json`;
 
     this.animation = lottie.loadAnimation({
       container: this.lottieContainer.nativeElement,
       renderer: 'svg',
-      loop: this.loop,
-      autoplay: this.autoplay,
+      loop: this.loop(),
+      autoplay: this.autoplay(),
       path: animationUrl,
     });
 
     // Gestion d'erreur si l'emoji n'existe pas
     this.animation.addEventListener('data_failed', () => {
-      console.warn(`Emoji Lottie non trouvé pour le code: ${this.emojiCode}`);
+      console.warn(`Emoji Lottie non trouvé pour le code: ${this.emojiCode()}`);
       // Fallback vers un emoji par défaut
       this.loadFallbackEmoji();
     });
@@ -94,8 +95,8 @@ export class LottieEmojiComponent implements OnInit, OnDestroy, OnChanges {
     this.animation = lottie.loadAnimation({
       container: this.lottieContainer.nativeElement,
       renderer: 'svg',
-      loop: this.loop,
-      autoplay: this.autoplay,
+      loop: this.loop(),
+      autoplay: this.autoplay(),
       path: fallbackUrl,
     });
   }

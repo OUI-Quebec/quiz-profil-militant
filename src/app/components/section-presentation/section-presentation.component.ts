@@ -1,9 +1,9 @@
 import {
   Component,
-  Input,
   Output,
   EventEmitter,
   ViewChild,
+  input,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Section } from '../../model/section';
@@ -17,8 +17,8 @@ import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
   styleUrl: './section-presentation.component.scss',
 })
 export class SectionPresentationComponent {
-  @Input() section: Section | null = null;
-  @Input() numeroSection: number = 1;
+  readonly section = input.required<Section>();
+  readonly numeroSection = input<number>(1);
   @Output() commencer = new EventEmitter<void>();
 
   @ViewChild('commencerSectionLottie')

@@ -1,15 +1,14 @@
-@if (section) {
 <div class="section-presentation">
   <div class="container">
     <div class="section-card">
-      <div class="section-numero">Section {{ numeroSection }}</div>
+      <div class="section-numero">Section {{ numeroSection() }}</div>
 
-      <h1 class="section-titre">{{ section.section }}</h1>
+      <h1 class="section-titre">{{ section().section }}</h1>
 
       <div class="section-info">
         <div class="questions-count">
           <span class="icon">📝</span>
-          {{ section.questions.length }} questions dans cette section
+          {{ section().questions.length }} questions dans cette section
         </div>
       </div>
 
@@ -44,4 +43,3 @@
     </div>
   </div>
 </div>
-}

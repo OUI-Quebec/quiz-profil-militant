@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 import { Profil } from '../../model/profil';
@@ -11,8 +11,8 @@ import { Profil } from '../../model/profil';
   styleUrl: './profil-dialog.component.scss',
 })
 export class ProfilDialogComponent {
-  @Input() profil: Profil | null = null;
-  @Input() isOpen = false;
+  readonly profil = input.required<Profil>();
+  readonly isOpen = input(false);
   @Output() close = new EventEmitter<void>();
 
   fermerDialog(): void {

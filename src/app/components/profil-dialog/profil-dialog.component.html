@@ -1,18 +1,18 @@
-@if (isOpen && profil) {
+@if (isOpen()) {
 <div class="dialog-overlay" (click)="onBackdropClick($event)">
   <div class="dialog-content">
     <div class="dialog-header">
       <h2 class="profil-nom">
         <span
           class="profil-emoji-container"
-          [style.background-color]="profil.couleur"
+          [style.background-color]="profil().couleur"
         >
           <app-lottie-emoji
-            [emojiCode]="profil.emojis"
+            [emojiCode]="profil().emojis"
             [size]="40"
           ></app-lottie-emoji>
         </span>
-        {{ profil.nom }}
+        {{ profil().nom }}
       </h2>
       <button class="btn-close" (click)="fermerDialog()" type="button">
         ✕
@@ -21,14 +21,14 @@
 
     <div class="dialog-body">
       <div class="profil-description">
-        <h3>{{ profil.description_courte }}</h3>
-        <p class="description-longue">{{ profil.description_longue }}</p>
+        <h3>{{ profil().description_courte }}</h3>
+        <p class="description-longue">{{ profil().description_longue }}</p>
       </div>
 
       <div class="exemples-action">
         <h4>Exemples d'actions :</h4>
         <ul>
-          @for (action of profil.exemples_action; track action) {
+          @for (action of profil().exemples_action; track action) {
           <li>{{ action }}</li>
           }
         </ul>

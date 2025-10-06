@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,11 +9,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dialog-confirmation.component.scss',
 })
 export class DialogConfirmationComponent {
-  @Input() isVisible: boolean = false;
-  @Input() titre: string = 'Confirmation';
-  @Input() message: string = 'Êtes-vous sûr de vouloir continuer ?';
-  @Input() texteConfirmer: string = 'Confirmer';
-  @Input() texteAnnuler: string = 'Annuler';
+  readonly isVisible = input<boolean>(false);
+  readonly titre = input<string>('Confirmation');
+  readonly message = input<string>('Êtes-vous sûr de vouloir continuer ?');
+  readonly texteConfirmer = input<string>('Confirmer');
+  readonly texteAnnuler = input<string>('Annuler');
 
   @Output() confirmer = new EventEmitter<void>();
   @Output() annuler = new EventEmitter<void>();

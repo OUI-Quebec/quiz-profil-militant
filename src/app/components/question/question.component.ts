@@ -1,9 +1,9 @@
 import {
   Component,
-  Input,
   Output,
   EventEmitter,
   ViewChild,
+  input,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Question } from '../../model/question';
@@ -18,8 +18,8 @@ import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
   styleUrl: './question.component.scss',
 })
 export class QuestionComponent {
-  @Input() question: Question | null = null;
-  @Input() peutRetourner: boolean = false;
+  readonly question = input.required<Question>();
+  readonly peutRetourner = input<boolean>(false);
   @Output() choixEffectue = new EventEmitter<Choix>();
   @Output() precedentDemande = new EventEmitter<void>();
   @Output() passerDemande = new EventEmitter<void>();

@@ -1,10 +1,10 @@
 import {
   Component,
-  Input,
   OnInit,
   signal,
   computed,
   ViewChild,
+  input
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -28,7 +28,7 @@ import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confi
   styleUrl: './resultats.component.scss',
 })
 export class ResultatsComponent implements OnInit {
-  @Input() profils: Profil[] = [];
+  readonly profils = input<Profil[]>([]);
   @ViewChild('implicationLottie') implicationLottie!: LottieEmojiComponent;
   @ViewChild('refaireLottie') refaireLottie!: LottieEmojiComponent;
 
@@ -49,9 +49,10 @@ export class ResultatsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.profils && this.profils.length > 0) {
-      this.profilPrincipal = this.profils[0];
-      this.autresProfils = this.profils.slice(1).filter((p) => p.score > 0);
+    const profils = this.profils();
+    if (profils && profils.length > 0) {
+      this.profilPrincipal = profils[0];
+      this.autresProfils = profils.slice(1).filter((p) => p.score > 0);
     }
   }
 

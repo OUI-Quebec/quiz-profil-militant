@@ -1,12 +1,11 @@
-@if (question) {
 <div class="question-container">
   <div class="question-card">
     <div class="question-header">
-      <h2 class="question-titre">{{ question.question }}</h2>
+      <h2 class="question-titre">{{ question().question }}</h2>
     </div>
 
     <div class="choix-container">
-      @for (choix of question.choix; track choix.reponse; let i = $index) {
+      @for (choix of question().choix; track choix.reponse; let i = $index) {
       <div
         class="choix-card"
         (click)="selectionnerChoix(choix)"
@@ -27,7 +26,7 @@
       <button
         class="btn-precedent"
         (click)="precedent()"
-        [disabled]="!peutRetourner"
+        [disabled]="!peutRetourner()"
         (mouseenter)="onHoverPrecedent(true)"
         (mouseleave)="onHoverPrecedent(false)"
       >
@@ -112,4 +111,3 @@
     </div>
   </div>
 </div>
-}
