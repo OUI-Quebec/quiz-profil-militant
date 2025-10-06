@@ -4,7 +4,8 @@ import {
   signal,
   computed,
   input,
-  viewChild
+  viewChild,
+  inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -28,9 +29,15 @@ import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confi
   styleUrl: './resultats.component.scss',
 })
 export class ResultatsComponent implements OnInit {
+  private quizService = inject(QuizService);
+  private profilService = inject(ProfilService);
+  private router = inject(Router);
+
   readonly profils = input<Profil[]>([]);
-  readonly implicationLottie = viewChild.required<LottieEmojiComponent>('implicationLottie');
-  readonly refaireLottie = viewChild.required<LottieEmojiComponent>('refaireLottie');
+  readonly implicationLottie =
+    viewChild.required<LottieEmojiComponent>('implicationLottie');
+  readonly refaireLottie =
+    viewChild.required<LottieEmojiComponent>('refaireLottie');
 
   profilPrincipal: Profil | null = null;
   autresProfils: Profil[] = [];
@@ -41,12 +48,6 @@ export class ResultatsComponent implements OnInit {
 
   isDialogOpen = computed(() => this.dialogOpen());
   profil = computed(() => this.profilSelectionne());
-
-  constructor(
-    private quizService: QuizService,
-    private profilService: ProfilService,
-    private router: Router
-  ) {}
 
   ngOnInit(): void {
     const profils = this.profils();

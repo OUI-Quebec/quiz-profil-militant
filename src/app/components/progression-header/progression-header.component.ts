@@ -1,4 +1,4 @@
-import { Component, computed } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuizService } from '../../services/quiz.service';
 
@@ -10,7 +10,7 @@ import { QuizService } from '../../services/quiz.service';
   styleUrl: './progression-header.component.scss',
 })
 export class ProgressionHeaderComponent {
-  statistiques = computed(() => this.quizService.statistiques());
+  private quizService = inject(QuizService);
 
-  constructor(private quizService: QuizService) {}
+  statistiques = computed(() => this.quizService.statistiques());
 }

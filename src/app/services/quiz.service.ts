@@ -1,4 +1,4 @@
-import { Injectable, signal, computed, effect } from '@angular/core';
+import { Injectable, signal, computed, effect, inject } from '@angular/core';
 import { Section } from '../model/section';
 import { ProgressionQuiz } from '../model/progression-quiz';
 import { Profil } from '../model/profil';
@@ -9,6 +9,8 @@ import * as yaml from 'js-yaml';
   providedIn: 'root',
 })
 export class QuizService {
+  private profilService = inject(ProfilService);
+
   // Signaux pour l'état de l'application
   private _sections = signal<Section[]>([]);
   private _progression = signal<ProgressionQuiz>({
@@ -80,7 +82,7 @@ export class QuizService {
 
   private readonly STORAGE_KEY = 'quiz-progression-oui-quebec';
 
-  constructor(private profilService: ProfilService) {
+  constructor() {
     this.chargerQuiz();
     this.chargerProgression();
 

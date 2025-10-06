@@ -1,4 +1,4 @@
-import { Component, computed, signal, viewChild } from '@angular/core';
+import { Component, computed, signal, viewChild, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProfilService } from '../../services/profil.service';
@@ -20,7 +20,11 @@ import { Profil } from '../../model/profil';
   styleUrl: './accueil.component.scss',
 })
 export class AccueilComponent {
-  readonly commencerLottie = viewChild.required<LottieEmojiComponent>('commencerLottie');
+  private router = inject(Router);
+  private profilService = inject(ProfilService);
+
+  readonly commencerLottie =
+    viewChild.required<LottieEmojiComponent>('commencerLottie');
 
   // Signal pour le dialogue
   private dialogOpen = signal(false);
@@ -29,8 +33,6 @@ export class AccueilComponent {
   // Computed pour les données du dialogue
   isDialogOpen = computed(() => this.dialogOpen());
   profil = computed(() => this.profilSelectionne());
-
-  constructor(private router: Router, private profilService: ProfilService) {}
 
   // Computed pour récupérer les profils avec leurs données complètes
   profils = computed(() => {

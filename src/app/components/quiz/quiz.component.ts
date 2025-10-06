@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { QuizService } from '../../services/quiz.service';
@@ -26,11 +26,12 @@ import { Choix } from '../../model/choix';
   styleUrl: './quiz.component.scss',
 })
 export class QuizComponent {
+  private quizService = inject(QuizService);
+  private router = inject(Router);
+
   // Signaux locaux pour l'état de l'interface
   private sectionDejaCommencee = signal<number>(-1);
   showDialogRecommencer = signal<boolean>(false);
-
-  constructor(private quizService: QuizService, private router: Router) {}
 
   // Signaux computed basés sur les données du service
   sections = computed(() => this.quizService.sections());
