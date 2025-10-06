@@ -7,7 +7,7 @@ import {
   viewChild,
   inject,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Router } from '@angular/router';
 import { Profil } from '../../model/profil';
 import { QuizService } from '../../services/quiz.service';
@@ -20,11 +20,10 @@ import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confi
   selector: 'app-resultats',
   standalone: true,
   imports: [
-    CommonModule,
     ProfilDialogComponent,
     LottieEmojiComponent,
-    DialogConfirmationComponent,
-  ],
+    DialogConfirmationComponent
+],
   templateUrl: './resultats.component.html',
   styleUrl: './resultats.component.scss',
 })

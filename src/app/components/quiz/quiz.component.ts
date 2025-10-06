@@ -1,5 +1,5 @@
 import { Component, computed, signal, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Router } from '@angular/router';
 import { QuizService } from '../../services/quiz.service';
 import { ProgressionHeaderComponent } from '../progression-header/progression-header.component';
@@ -14,14 +14,13 @@ import { Choix } from '../../model/choix';
   selector: 'app-quiz',
   standalone: true,
   imports: [
-    CommonModule,
     ProgressionHeaderComponent,
     SectionPresentationComponent,
     QuestionComponent,
     ResultatsComponent,
     FooterComponent,
-    DialogConfirmationComponent,
-  ],
+    DialogConfirmationComponent
+],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss',
 })

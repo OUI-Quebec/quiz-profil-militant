@@ -1,12 +1,12 @@
 import { Component, input, output, viewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Section } from '../../model/section';
 import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 
 @Component({
   selector: 'app-section-presentation',
   standalone: true,
-  imports: [CommonModule, LottieEmojiComponent],
+  imports: [LottieEmojiComponent],
   templateUrl: './section-presentation.component.html',
   styleUrl: './section-presentation.component.scss',
 })

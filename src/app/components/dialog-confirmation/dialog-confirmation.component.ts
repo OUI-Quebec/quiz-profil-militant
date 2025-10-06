@@ -1,10 +1,10 @@
 import { Component, input, output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-dialog-confirmation',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './dialog-confirmation.component.html',
   styleUrl: './dialog-confirmation.component.scss',
 })

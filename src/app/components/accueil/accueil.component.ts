@@ -1,6 +1,6 @@
 import { Component, computed, signal, viewChild, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 import { ProfilService } from '../../services/profil.service';
 import { ProfilDialogComponent } from '../profil-dialog/profil-dialog.component';
 import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
@@ -10,12 +10,7 @@ import { Profil } from '../../model/profil';
 @Component({
   selector: 'app-accueil',
   standalone: true,
-  imports: [
-    CommonModule,
-    ProfilDialogComponent,
-    LottieEmojiComponent,
-    FooterComponent,
-  ],
+  imports: [ProfilDialogComponent, LottieEmojiComponent, FooterComponent],
   templateUrl: './accueil.component.html',
   styleUrl: './accueil.component.scss',
 })

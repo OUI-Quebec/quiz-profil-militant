@@ -1,5 +1,5 @@
 import { Component, input, output, viewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Question } from '../../model/question';
 import { Choix } from '../../model/choix';
 import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
@@ -7,7 +7,7 @@ import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 @Component({
   selector: 'app-question',
   standalone: true,
-  imports: [CommonModule, LottieEmojiComponent],
+  imports: [LottieEmojiComponent],
   templateUrl: './question.component.html',
   styleUrl: './question.component.scss',
 })

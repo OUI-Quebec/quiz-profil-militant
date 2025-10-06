@@ -7,13 +7,13 @@ import {
   input,
   viewChild
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import lottie, { AnimationItem } from 'lottie-web';
 
 @Component({
   selector: 'app-lottie-emoji',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `
     <div
       #lottieContainer
