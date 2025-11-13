@@ -11,7 +11,7 @@
         - reponse : Être dans la rue avec une pancarte ou une bannière. 
           type : Activiste
         - reponse : Rassembler une équipe et donner le ton. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Dans un groupe, tu te sens plus à l’aise quand...
       choix :  
         - reponse : Tu soutiens en arrière-plan. 
@@ -23,7 +23,7 @@
         - reponse : Tu mènes une action directe. 
           type : Activiste
         - reponse : Tu structures et coordonnes. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Ce qui te motive le plus à militer
       choix :  
         - reponse : Savoir que j’ai contribué, même discrètement. 
@@ -35,7 +35,7 @@
         - reponse : Sentir l’adrénaline d’une action publique. 
           type : Activiste
         - reponse : Voir une équipe avancer grâce à moi. 
-          type : Leader
+          type : Coordonateur-trice
 - section : Section 2 – Types d’activités préférées
   questions :
     - question : Si tu avais une heure à donner par semaine, tu préférerais…
@@ -49,7 +49,7 @@
         - reponse : Distribuer des tracts devant un métro. 
           type : Activiste
         - reponse : Organiser une rencontre d’équipe. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Tu es invité·e à un événement indépendantiste. Tu aimerais surtout…
       choix :
         - reponse : Aider à l’installation et la logistique. 
@@ -61,7 +61,7 @@
         - reponse : Animer une action de visibilité. 
           type : Activiste
         - reponse : Être la personne qui présente la soirée. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Si on te proposait un rôle demain, tu choisirais…
       choix :
         - reponse : Gestion d’une liste de contacts. 
@@ -73,7 +73,7 @@
         - reponse : Bannière géante sur un pont. 
           type : Activiste
         - reponse : Planifier la prochaine campagne locale. 
-          type : Leader
+          type : Coordonateur-trice
 - section : Section 3 – Rapport aux idées et à la communication
   questions :
     - question : Face à une critique de l’indépendance, tu es du genre à…
@@ -87,7 +87,7 @@
         - reponse : Répliquer en affichant fièrement tes convictions. 
           type : Activiste
         - reponse : Encourager le groupe à rester uni et positif. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Ton style de communication préféré
       choix :
         - reponse : Messages privés ou tâches discrètes. 
@@ -99,7 +99,7 @@
         - reponse : Tracts, slogans, chants. 
           type : Activiste
         - reponse : Discours ou prise de parole publique. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Si tu devais convaincre un ami de l’importance d’agir, tu…
       choix :
         - reponse : Lui montrerais des petites actions faciles. 
@@ -111,7 +111,7 @@
         - reponse : L’amènerais à une manif. 
           type : Activiste
         - reponse : L’intégrerais directement à ton équipe. 
-          type : Leader
+          type : Coordonateur-trice
 - section : Section 4 – Rapport au terrain et à l’action
   questions :
     - question : Ton rythme préféré pour militer
@@ -125,7 +125,7 @@
         - reponse : Intense, sur le terrain. 
           type : Activiste
         - reponse : Régulier, en planifiant avec d’autres. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Tu as une soirée libre. Quelle activité te tente?
       choix :
         - reponse : Préparer du matériel militant. 
@@ -137,7 +137,7 @@
         - reponse : Rejoindre une action surprise. 
           type : Activiste
         - reponse : Appeler les membres de ton équipe. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Tu es témoin d’une actualité politique majeure
       choix :
         - reponse : Tu la partages discrètement au groupe. 
@@ -149,7 +149,7 @@
         - reponse : Tu sors une bannière dans la rue. 
           type : Activiste
         - reponse : Tu coordonnes une réponse collective. 
-          type : Leader
+          type : Coordonateur-trice
 - section : Section 5 – Rapport à la collectivité
   questions :
     - question : Dans un projet, tu préfères être…
@@ -163,7 +163,7 @@
         - reponse : Celui ou celle qui agit. 
           type : Activiste
         - reponse : Celui ou celle qui guide. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Ton plus grand plaisir dans le militantisme, c’est…
       choix :
         - reponse : Voir une tâche complétée. 
@@ -175,7 +175,7 @@
         - reponse : Voir un geste marquer l’espace public. 
           type : Activiste
         - reponse : Voir une équipe réussir grâce à toi. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Quand tu penses à l’indépendance, ton rôle idéal est…
       choix :
         - reponse : L’appui logistique. 
@@ -187,7 +187,7 @@
         - reponse : Le soldat de terrain. 
           type : Activiste
         - reponse : Le capitaine d’équipe. 
-          type : Leader
+          type : Coordonateur-trice
 - section : Section 6 – Scénarios pratiques
   questions :
     - question : Un groupe doit préparer un grand rassemblement. On te propose de…
@@ -201,7 +201,7 @@
         - reponse : Installer des bannières dans la salle. 
           type : Activiste
         - reponse : Gérer l’horaire et répartir les rôles. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Tu es invité à une formation militante. Tu préfères…
       choix :
         - reponse : Écouter et prendre des notes. 
@@ -213,7 +213,7 @@
         - reponse : Transformer la formation en action surprise. 
           type : Activiste
         - reponse : Motiver les autres à s’impliquer après la rencontre. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Si tu devais laisser une trace dans le mouvement, ce serait…
       choix :
         - reponse : Une base de données bien organisée. 
@@ -225,7 +225,7 @@
         - reponse : Une photo d’action choc. 
           type : Activiste
         - reponse : Une équipe soudée que tu as formée. 
-          type : Leader
+          type : Coordonateur-trice
 - section : Section 7 – Attitudes et envies profondes
   questions :
     - question : Ce qui te rend fier en militant
@@ -239,7 +239,7 @@
         - reponse : Avoir fait bouger les choses. 
           type : Activiste
         - reponse : Avoir rassemblé les gens. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Si tu avais une responsabilité demain, ce serait…
       choix :
         - reponse : Gérer une liste d’appels. 
@@ -251,7 +251,7 @@
         - reponse : Mener une manif éclair. 
           type : Activiste
         - reponse : Planifier la prochaine campagne. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Ton style d’engagement préféré
       choix :
         - reponse : Discret. 
@@ -263,7 +263,7 @@
         - reponse : Direct. 
           type : Activiste
         - reponse : Rassembleur. 
-          type : Leader
+          type : Coordonateur-trice
 - section : Section 8 – Derniers choix rapides
   questions :
     - question : Un mot qui te définit
@@ -277,7 +277,7 @@
         - reponse : Énergique. 
           type : Activiste
         - reponse : Motivant·e. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Un outil que tu préfères utiliser
       choix :
         - reponse : Ordinateur / tableur. 
@@ -289,7 +289,7 @@
         - reponse : Porte-voix / tract. 
           type : Activiste
         - reponse : Agenda / tableau blanc. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Dans un mouvement, tu admires surtout...
       choix :
         - reponse : Ceux qui tiennent la machine en marche. 
@@ -301,7 +301,7 @@
         - reponse : Ceux qui osent des actions. 
           type : Activiste
         - reponse : Ceux qui mobilisent les foules. 
-          type : Leader
+          type : Coordonateur-trice
 - section : Section 9 – Projection
   questions :
     - question : Dans 5 ans, tu aimerais avoir contribué en…
@@ -315,7 +315,7 @@
         - reponse : Multipliant les actions visibles. 
           type : Activiste
         - reponse : Structurant une équipe durable. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Ton moment militant idéal
       choix :
         - reponse : Un soir à plier des tracts en petit groupe. 
@@ -327,7 +327,7 @@
         - reponse : Une manif avec banderole géante. 
           type : Activiste
         - reponse : Une grande assemblée coordonnée par toi. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Dans ton temps libre, tu préfères…
       choix :
         - reponse : Ranger et organiser. 
@@ -339,7 +339,7 @@
         - reponse : Sortir et agir. 
           type : Activiste
         - reponse : Coordonner et planifier. 
-          type : Leader
+          type : Coordonateur-trice
 - section : Section 10 – Derniers choix instinctifs
   questions :
     - question : Une campagne réussie doit surtout…
@@ -353,7 +353,7 @@
         - reponse : Être visible et percutante. 
           type : Activiste
         - reponse : Être bien coordonnée. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Dans une équipe, tu es souvent celui/celle qui…
       choix :
         - reponse : Fait les petites tâches qu’on oublie. 
@@ -365,7 +365,7 @@
         - reponse : Lance l’action. 
           type : Activiste
         - reponse : Organise les troupes. 
-          type : Leader
+          type : Coordonateur-trice
     - question : Si on t’étiquette dans le mouvement, tu serais plutôt…
       choix :
         - reponse : Le soutien fiable. 
@@ -377,4 +377,4 @@
         - reponse : Le moteur. 
           type : Activiste
         - reponse : Le capitaine. 
-          type : Leader
+          type : Coordonateur-trice

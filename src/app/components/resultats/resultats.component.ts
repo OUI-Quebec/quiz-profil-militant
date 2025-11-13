@@ -22,8 +22,8 @@ import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confi
   imports: [
     ProfilDialogComponent,
     LottieEmojiComponent,
-    DialogConfirmationComponent
-],
+    DialogConfirmationComponent,
+  ],
   templateUrl: './resultats.component.html',
   styleUrl: './resultats.component.scss',
 })

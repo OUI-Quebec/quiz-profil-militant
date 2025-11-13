@@ -60,7 +60,9 @@ export class QuizService {
     const scores: { [key: string]: number } = {
       Activiste: 0,
       Idées: 0,
-      Leader: 0,
+      Introverti: 0,
+      'Coordonateur-trice': 0,
+      'Socio-culturel': 0,
     };
 
     // Compter les réponses par type
@@ -204,8 +206,6 @@ export class QuizService {
    * Revient à la question précédente
    */
   questionPrecedente(): void {
-    const progression = this._progression();
-
     this._progression.update((current) => {
       if (current.questionActuelle > 0) {
         return {
