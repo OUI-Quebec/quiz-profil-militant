@@ -98,7 +98,6 @@ export class QuizComponent {
     }
   }
 
-
   /**
    * Traite la réponse à une question
    */

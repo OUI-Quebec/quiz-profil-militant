@@ -13,8 +13,8 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 2rem;
   }
@@ -24,6 +24,7 @@
     align-items: center;
     gap: 1rem;
     min-width: 200px;
+    flex: 1;
 
     .barre-fond {
       flex: 1;
@@ -91,15 +92,6 @@
       gap: 0.9rem; /* ajustable selon rendu visuel */
       text-align: center;
       padding: 0 1rem;
-    }
-
-    .section-info {
-      text-align: center;
-
-      .section-titre {
-        font-size: 1rem;
-        margin: 0 0 0.125rem 0;
-      }
     }
 
     .barre-progression {
