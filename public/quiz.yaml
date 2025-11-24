@@ -1,380 +1,252 @@
-- section : Section 1 – Motivation et personnalité
-  questions :
-    - question : Quand tu penses à ton engagement pour l’indépendance, tu t’imagines surtout…
-      choix :
-        - reponse : Préparer du matériel tranquillement chez moi. 
-          type : Introverti
-        - reponse : Débattre et partager des arguments solides. 
-          type : Idées
-        - reponse : Participer à un spectacle ou une soirée militante inspirante. 
-          type : Socio-culturel
-        - reponse : Être dans la rue avec une pancarte ou une bannière. 
-          type : Activiste
-        - reponse : Rassembler une équipe et donner le ton. 
-          type : Coordonateur-trice
-    - question : Dans un groupe, tu te sens plus à l’aise quand...
-      choix :  
-        - reponse : Tu soutiens en arrière-plan. 
-          type : Introverti
-        - reponse : Tu apportes des connaissances. 
-          type : Idées
-        - reponse : Tu mets de l’ambiance. 
-          type : Socio-culturel
-        - reponse : Tu mènes une action directe. 
-          type : Activiste
-        - reponse : Tu structures et coordonnes. 
-          type : Coordonateur-trice
-    - question : Ce qui te motive le plus à militer
-      choix :  
-        - reponse : Savoir que j’ai contribué, même discrètement. 
-          type : Introverti
-        - reponse : Rendre les arguments clairs et convaincants. 
-          type : Idées
-        - reponse : Créer des moments rassembleurs et mémorables. 
-          type : Socio-culturel
-        - reponse : Sentir l’adrénaline d’une action publique. 
-          type : Activiste
-        - reponse : Voir une équipe avancer grâce à moi. 
-          type : Coordonateur-trice
-- section : Section 2 – Types d’activités préférées
-  questions :
-    - question : Si tu avais une heure à donner par semaine, tu préférerais…
-      choix :  
-        - reponse : Coller des affiches discrètement. 
-          type : Introverti
-        - reponse : Rédiger un texte ou une fiche d’argumentaire. 
-          type : Idées
-        - reponse : Fabriquer une banderole artistique. 
-          type : Socio-culturel
-        - reponse : Distribuer des tracts devant un métro. 
-          type : Activiste
-        - reponse : Organiser une rencontre d’équipe. 
-          type : Coordonateur-trice
-    - question : Tu es invité·e à un événement indépendantiste. Tu aimerais surtout…
-      choix :
-        - reponse : Aider à l’installation et la logistique. 
-          type : Introverti
-        - reponse : Donner une mini-conférence. 
-          type : Idées
-        - reponse : Participer à une soirée musicale militante. 
-          type : Socio-culturel
-        - reponse : Animer une action de visibilité. 
-          type : Activiste
-        - reponse : Être la personne qui présente la soirée. 
-          type : Coordonateur-trice
-    - question : Si on te proposait un rôle demain, tu choisirais…
-      choix :
-        - reponse : Gestion d’une liste de contacts. 
-          type : Introverti
-        - reponse : Recherche et synthèse sur un enjeu. 
-          type : Idées
-        - reponse : Décoration d’un espace pour un rassemblement. 
-          type : Socio-culturel
-        - reponse : Bannière géante sur un pont. 
-          type : Activiste
-        - reponse : Planifier la prochaine campagne locale. 
-          type : Coordonateur-trice
-- section : Section 3 – Rapport aux idées et à la communication
-  questions :
-    - question : Face à une critique de l’indépendance, tu es du genre à…
-      choix :
-        - reponse : Écouter et transmettre à d’autres plus à l’aise. 
-          type : Introverti
-        - reponse : Répondre avec un argument précis. 
-          type : Idées
-        - reponse : Raconter une histoire culturelle ou émotive. 
-          type : Socio-culturel
-        - reponse : Répliquer en affichant fièrement tes convictions. 
-          type : Activiste
-        - reponse : Encourager le groupe à rester uni et positif. 
-          type : Coordonateur-trice
-    - question : Ton style de communication préféré
-      choix :
-        - reponse : Messages privés ou tâches discrètes. 
-          type : Introverti
-        - reponse : Articles, textes ou exposés. 
-          type : Idées
-        - reponse : Performances, visuels, arts. 
-          type : Socio-culturel
-        - reponse : Tracts, slogans, chants. 
-          type : Activiste
-        - reponse : Discours ou prise de parole publique. 
-          type : Coordonateur-trice
-    - question : Si tu devais convaincre un ami de l’importance d’agir, tu…
-      choix :
-        - reponse : Lui montrerais des petites actions faciles. 
-          type : Introverti
-        - reponse : Lui donnerais des faits et arguments. 
-          type : Idées
-        - reponse : L’inviterais à un spectacle ou une soirée militante. 
-          type : Socio-culturel
-        - reponse : L’amènerais à une manif. 
-          type : Activiste
-        - reponse : L’intégrerais directement à ton équipe. 
-          type : Coordonateur-trice
-- section : Section 4 – Rapport au terrain et à l’action
-  questions :
-    - question : Ton rythme préféré pour militer
-      choix :
-        - reponse : Calme, à mon rythme. 
-          type : Introverti
-        - reponse : Par projets intellectuels. 
-          type : Idées
-        - reponse : Au gré d’événements créatifs. 
-          type : Socio-culturel
-        - reponse : Intense, sur le terrain. 
-          type : Activiste
-        - reponse : Régulier, en planifiant avec d’autres. 
-          type : Coordonateur-trice
-    - question : Tu as une soirée libre. Quelle activité te tente?
-      choix :
-        - reponse : Préparer du matériel militant. 
-          type : Introverti
-        - reponse : Lire et réfléchir sur l’avenir du Québec. 
-          type : Idées
-        - reponse : Créer une affiche ou une chanson militante. 
-          type : Socio-culturel
-        - reponse : Rejoindre une action surprise. 
-          type : Activiste
-        - reponse : Appeler les membres de ton équipe. 
-          type : Coordonateur-trice
-    - question : Tu es témoin d’une actualité politique majeure
-      choix :
-        - reponse : Tu la partages discrètement au groupe. 
-          type : Introverti
-        - reponse : Tu analyses les conséquences. 
-          type : Idées
-        - reponse : Tu proposes un événement symbolique. 
-          type : Socio-culturel
-        - reponse : Tu sors une bannière dans la rue. 
-          type : Activiste
-        - reponse : Tu coordonnes une réponse collective. 
-          type : Coordonateur-trice
-- section : Section 5 – Rapport à la collectivité
-  questions :
-    - question : Dans un projet, tu préfères être…
-      choix :
-        - reponse : Celui ou celle qui soutient. 
-          type : Introverti
-        - reponse : Celui ou celle qui éclaire. 
-          type : Idées
-        - reponse : Celui ou celle qui inspire. 
-          type : Socio-culturel
-        - reponse : Celui ou celle qui agit. 
-          type : Activiste
-        - reponse : Celui ou celle qui guide. 
-          type : Coordonateur-trice
-    - question : Ton plus grand plaisir dans le militantisme, c’est…
-      choix :
-        - reponse : Voir une tâche complétée. 
-          type : Introverti
-        - reponse : Voir les gens comprendre un argument. 
-          type : Idées
-        - reponse : Voir les gens vibrer ensemble. 
-          type : Socio-culturel
-        - reponse : Voir un geste marquer l’espace public. 
-          type : Activiste
-        - reponse : Voir une équipe réussir grâce à toi. 
-          type : Coordonateur-trice
-    - question : Quand tu penses à l’indépendance, ton rôle idéal est…
-      choix :
-        - reponse : L’appui logistique. 
-          type : Introverti
-        - reponse : Le penseur stratégique. 
-          type : Idées
-        - reponse : Le créateur culturel. 
-          type : Socio-culturel
-        - reponse : Le soldat de terrain. 
-          type : Activiste
-        - reponse : Le capitaine d’équipe. 
-          type : Coordonateur-trice
-- section : Section 6 – Scénarios pratiques
-  questions :
-    - question : Un groupe doit préparer un grand rassemblement. On te propose de…
-      choix :
-        - reponse : Tenir la liste du matériel. 
-          type : Introverti
-        - reponse : Préparer un discours sur l’histoire du Québec. 
-          type : Idées
-        - reponse : Concevoir une mise en scène culturelle. 
-          type : Socio-culturel
-        - reponse : Installer des bannières dans la salle. 
-          type : Activiste
-        - reponse : Gérer l’horaire et répartir les rôles. 
-          type : Coordonateur-trice
-    - question : Tu es invité à une formation militante. Tu préfères…
-      choix :
-        - reponse : Écouter et prendre des notes. 
-          type : Introverti
-        - reponse : Animer un atelier. 
-          type : Idées
-        - reponse : Créer un moment artistique pendant la pause. 
-          type : Socio-culturel
-        - reponse : Transformer la formation en action surprise. 
-          type : Activiste
-        - reponse : Motiver les autres à s’impliquer après la rencontre. 
-          type : Coordonateur-trice
-    - question : Si tu devais laisser une trace dans le mouvement, ce serait…
-      choix :
-        - reponse : Une base de données bien organisée. 
-          type : Introverti
-        - reponse : Un texte fondateur. 
-          type : Idées
-        - reponse : Une chanson ou une affiche marquante. 
-          type : Socio-culturel
-        - reponse : Une photo d’action choc. 
-          type : Activiste
-        - reponse : Une équipe soudée que tu as formée. 
-          type : Coordonateur-trice
-- section : Section 7 – Attitudes et envies profondes
-  questions :
-    - question : Ce qui te rend fier en militant
-      choix :
-        - reponse : Contribuer efficacement. 
-          type : Introverti
-        - reponse : Avoir enrichi le débat. 
-          type : Idées
-        - reponse : Avoir touché les cœurs. 
-          type : Socio-culturel
-        - reponse : Avoir fait bouger les choses. 
-          type : Activiste
-        - reponse : Avoir rassemblé les gens. 
-          type : Coordonateur-trice
-    - question : Si tu avais une responsabilité demain, ce serait…
-      choix :
-        - reponse : Gérer une liste d’appels. 
-          type : Introverti
-        - reponse : Animer une discussion publique. 
-          type : Idées
-        - reponse : Organiser une soirée de poésie. 
-          type : Socio-culturel
-        - reponse : Mener une manif éclair. 
-          type : Activiste
-        - reponse : Planifier la prochaine campagne. 
-          type : Coordonateur-trice
-    - question : Ton style d’engagement préféré
-      choix :
-        - reponse : Discret. 
-          type : Introverti
-        - reponse : Intellectuel. 
-          type : Idées
-        - reponse : Créatif. 
-          type : Socio-culturel
-        - reponse : Direct. 
-          type : Activiste
-        - reponse : Rassembleur. 
-          type : Coordonateur-trice
-- section : Section 8 – Derniers choix rapides
-  questions :
-    - question : Un mot qui te définit
-      choix :
-        - reponse : Constante. 
-          type : Introverti
-        - reponse : Stratège. 
-          type : Idées
-        - reponse : Inspirant·e. 
-          type : Socio-culturel
-        - reponse : Énergique. 
-          type : Activiste
-        - reponse : Motivant·e. 
-          type : Coordonateur-trice
-    - question : Un outil que tu préfères utiliser
-      choix :
-        - reponse : Ordinateur / tableur. 
-          type : Introverti
-        - reponse : Livre / article. 
-          type : Idées
-        - reponse : Pinceau / guitare. 
-          type : Socio-culturel
-        - reponse : Porte-voix / tract. 
-          type : Activiste
-        - reponse : Agenda / tableau blanc. 
-          type : Coordonateur-trice
-    - question : Dans un mouvement, tu admires surtout...
-      choix :
-        - reponse : Ceux qui tiennent la machine en marche. 
-          type : Introverti
-        - reponse : Ceux qui portent les idées. 
-          type : Idées
-        - reponse : Ceux qui créent des moments uniques. 
-          type : Socio-culturel
-        - reponse : Ceux qui osent des actions. 
-          type : Activiste
-        - reponse : Ceux qui mobilisent les foules. 
-          type : Coordonateur-trice
-- section : Section 9 – Projection
-  questions :
-    - question : Dans 5 ans, tu aimerais avoir contribué en…
-      choix :
-        - reponse : Soutenant en coulisses. 
-          type : Introverti
-        - reponse : Renforçant l’argumentaire indépendantiste. 
-          type : Idées
-        - reponse : Faisant rayonner la culture indépendantiste. 
-          type : Socio-culturel
-        - reponse : Multipliant les actions visibles. 
-          type : Activiste
-        - reponse : Structurant une équipe durable. 
-          type : Coordonateur-trice
-    - question : Ton moment militant idéal
-      choix :
-        - reponse : Un soir à plier des tracts en petit groupe. 
-          type : Introverti
-        - reponse : Une conférence sur l’avenir économique du Québec. 
-          type : Idées
-        - reponse : Un spectacle de musique indépendantiste. 
-          type : Socio-culturel
-        - reponse : Une manif avec banderole géante. 
-          type : Activiste
-        - reponse : Une grande assemblée coordonnée par toi. 
-          type : Coordonateur-trice
-    - question : Dans ton temps libre, tu préfères…
-      choix :
-        - reponse : Ranger et organiser. 
-          type : Introverti
-        - reponse : Lire et apprendre. 
-          type : Idées
-        - reponse : Créer et partager. 
-          type : Socio-culturel
-        - reponse : Sortir et agir. 
-          type : Activiste
-        - reponse : Coordonner et planifier. 
-          type : Coordonateur-trice
-- section : Section 10 – Derniers choix instinctifs
-  questions :
-    - question : Une campagne réussie doit surtout…
-      choix :
-        - reponse : Être bien préparée. 
-          type : Introverti
-        - reponse : Être bien argumentée. 
-          type : Idées
-        - reponse : Être belle et inspirante. 
-          type : Socio-culturel
-        - reponse : Être visible et percutante. 
-          type : Activiste
-        - reponse : Être bien coordonnée. 
-          type : Coordonateur-trice
-    - question : Dans une équipe, tu es souvent celui/celle qui…
-      choix :
-        - reponse : Fait les petites tâches qu’on oublie. 
-          type : Introverti
-        - reponse : Amène une réflexion nouvelle. 
-          type : Idées
-        - reponse : Met de la couleur et de l’ambiance. 
-          type : Socio-culturel
-        - reponse : Lance l’action. 
-          type : Activiste
-        - reponse : Organise les troupes. 
-          type : Coordonateur-trice
-    - question : Si on t’étiquette dans le mouvement, tu serais plutôt…
-      choix :
-        - reponse : Le soutien fiable. 
-          type : Introverti
-        - reponse : Le cerveau. 
-          type : Idées
-        - reponse : L’artiste. 
-          type : Socio-culturel
-        - reponse : Le moteur. 
-          type : Activiste
-        - reponse : Le capitaine. 
-          type : Coordonateur-trice
+- question: Quand tu penses à ton engagement pour l’indépendance, tu t’imagines surtout…
+  choix:
+  - reponse: Préparer du matériel tranquillement chez moi.
+    type: Introverti
+  - reponse: Débattre et partager des arguments solides.
+    type: Idées
+  - reponse: Participer à un spectacle ou une soirée militante inspirante.
+    type: Socio-culturel
+  - reponse: Être dans la rue avec une pancarte ou une bannière.
+    type: Activiste
+  - reponse: Rassembler une équipe et donner le ton.
+    type: Coordonateur-trice
+- question: Dans un groupe, tu te sens plus à l’aise quand...
+  choix: 
+  - reponse: Tu soutiens en arrière-plan.
+    type: Introverti
+  - reponse: Tu apportes des connaissances.
+    type: Idées
+  - reponse: Tu mets de l’ambiance.
+    type: Socio-culturel
+  - reponse: Tu mènes une action directe.
+    type: Activiste
+  - reponse: Tu structures et coordonnes.
+    type: Coordonateur-trice
+- question: Ce qui te motive le plus à militer
+  choix:
+  - reponse: Savoir que j’ai contribué, même discrètement.
+    type: Introverti
+  - reponse: Rendre les arguments clairs et convaincants.
+    type: Idées
+  - reponse: Créer des moments rassembleurs et mémorables.
+    type: Socio-culturel
+  - reponse: Sentir l’adrénaline d’une action publique.
+    type: Activiste
+  - reponse: Voir une équipe avancer grâce à moi.
+    type: Coordonateur-trice
+- question: Si tu avais une heure à donner par semaine, tu préférerais…
+  choix:
+  - reponse: Coller des affiches discrètement.
+    type: Introverti
+  - reponse: Rédiger un texte ou une fiche d’argumentaire.
+    type: Idées
+  - reponse: Fabriquer une banderole artistique.
+    type: Socio-culturel
+  - reponse: Distribuer des tracts devant un métro.
+    type: Activiste
+  - reponse: Organiser une rencontre d’équipe.
+    type: Coordonateur-trice
+- question: Tu es invité·e à un événement indépendantiste. Tu aimerais surtout…
+  choix:
+  - reponse: Aider à l’installation et la logistique.
+    type: Introverti
+  - reponse: Donner une mini-conférence.
+    type: Idées
+  - reponse: Participer à une soirée musicale militante.
+    type: Socio-culturel
+  - reponse: Animer une action de visibilité.
+    type: Activiste
+  - reponse: Être la personne qui présente la soirée.
+    type: Coordonateur-trice
+- question: Si on te proposait un rôle demain, tu choisirais…
+  choix:
+  - reponse: Gestion d’une liste de contacts.
+    type: Introverti
+  - reponse: Recherche et synthèse sur un enjeu.
+    type: Idées
+  - reponse: Décoration d’un espace pour un rassemblement.
+    type: Socio-culturel
+  - reponse: Bannière géante sur un pont.
+    type: Activiste
+  - reponse: Planifier la prochaine campagne locale.
+    type: Coordonateur-trice
+- question: Face à une critique de l’indépendance, tu es du genre à…
+  choix:
+  - reponse: Écouter et transmettre à d’autres plus à l’aise.
+    type: Introverti
+  - reponse: Répondre avec un argument précis.
+    type: Idées
+  - reponse: Raconter une histoire culturelle ou émotive.
+    type: Socio-culturel
+  - reponse: Répliquer en affichant fièrement tes convictions.
+    type: Activiste
+  - reponse: Encourager le groupe à rester uni et positif.
+    type: Coordonateur-trice
+- question: Si tu devais convaincre un ami de l’importance d’agir, tu…
+  choix:
+  - reponse: Lui montrerais des petites actions faciles.
+    type: Introverti
+  - reponse: Lui donnerais des faits et arguments.
+    type: Idées
+  - reponse: L’inviterais à un spectacle ou une soirée militante.
+    type: Socio-culturel
+  - reponse: L’amènerais à une manif.
+    type: Activiste
+  - reponse: L’intégrerais directement à ton équipe.
+    type: Coordonateur-trice
+- question: Dans un projet, tu préfères être…
+  choix:
+  - reponse: Celui ou celle qui soutient.
+    type: Introverti
+  - reponse: Celui ou celle qui éclaire.
+    type: Idées
+  - reponse: Celui ou celle qui inspire.
+    type: Socio-culturel
+  - reponse: Celui ou celle qui agit.
+    type: Activiste
+  - reponse: Celui ou celle qui guide.
+    type: Coordonateur-trice
+- question: Ton plus grand plaisir dans le militantisme, c’est…
+  choix:
+  - reponse: Voir une tâche complétée.
+    type: Introverti
+  - reponse: Voir les gens comprendre un argument.
+    type: Idées
+  - reponse: Voir les gens vibrer ensemble.
+    type: Socio-culturel
+  - reponse: Voir un geste marquer l’espace public.
+    type: Activiste
+  - reponse: Voir une équipe réussir grâce à toi.
+    type: Coordonateur-trice
+- question: Si tu devais laisser une trace dans le mouvement, ce serait…
+  choix:
+  - reponse: Une base de données bien organisée.
+    type: Introverti
+  - reponse: Un texte fondateur.
+    type: Idées
+  - reponse: Une chanson ou une affiche marquante.
+    type: Socio-culturel
+  - reponse: Une photo d’action choc.
+    type: Activiste
+  - reponse: Une équipe soudée que tu as formée.
+    type: Coordonateur-trice
+- question: Ce qui te rend fier en militant
+  choix:
+  - reponse: Contribuer efficacement.
+    type: Introverti
+  - reponse: Avoir enrichi le débat.
+    type: Idées
+  - reponse: Avoir touché les cœurs.
+    type: Socio-culturel
+  - reponse: Avoir fait bouger les choses.
+    type: Activiste
+  - reponse: Avoir rassemblé les gens.
+    type: Coordonateur-trice
+- question: Si tu avais une responsabilité demain, ce serait…
+  choix:
+  - reponse: Gérer une liste d’appels.
+    type: Introverti
+  - reponse: Animer une discussion publique.
+    type: Idées
+  - reponse: Organiser une soirée de poésie.
+    type: Socio-culturel
+  - reponse: Mener une manif éclair.
+    type: Activiste
+  - reponse: Planifier la prochaine campagne.
+    type: Coordonateur-trice
+- question: Ton style d’engagement préféré
+  choix:
+  - reponse: Discret.
+    type: Introverti
+  - reponse: Intellectuel.
+    type: Idées
+  - reponse: Créatif.
+    type: Socio-culturel
+  - reponse: Direct.
+    type: Activiste
+  - reponse: Rassembleur.
+    type: Coordonateur-trice
+- question: Dans un mouvement, tu admires surtout...
+  choix:
+  - reponse: Ceux qui tiennent la machine en marche.
+    type: Introverti
+  - reponse: Ceux qui portent les idées.
+    type: Idées
+  - reponse: Ceux qui créent des moments uniques.
+    type: Socio-culturel
+  - reponse: Ceux qui osent des actions.
+    type: Activiste
+  - reponse: Ceux qui mobilisent les foules.
+    type: Coordonateur-trice
+- question: Dans 5 ans, tu aimerais avoir contribué en…
+  choix:
+  - reponse: Soutenant en coulisses.
+    type: Introverti
+  - reponse: Renforçant l’argumentaire indépendantiste.
+    type: Idées
+  - reponse: Faisant rayonner la culture indépendantiste.
+    type: Socio-culturel
+  - reponse: Multipliant les actions visibles.
+    type: Activiste
+  - reponse: Structurant une équipe durable.
+    type: Coordonateur-trice
+- question: Ton moment militant idéal
+  choix:
+  - reponse: Un soir à plier des tracts en petit groupe.
+    type: Introverti
+  - reponse: Une conférence sur l’avenir économique du Québec.
+    type: Idées
+  - reponse: Un spectacle de musique indépendantiste.
+    type: Socio-culturel
+  - reponse: Une manif avec banderole géante.
+    type: Activiste
+  - reponse: Une grande assemblée coordonnée par toi.
+    type: Coordonateur-trice
+- question: Dans ton temps libre, tu préfères…
+  choix:
+  - reponse: Ranger et organiser.
+    type: Introverti
+  - reponse: Lire et apprendre.
+    type: Idées
+  - reponse: Créer et partager.
+    type: Socio-culturel
+  - reponse: Sortir et agir.
+    type: Activiste
+  - reponse: Coordonner et planifier.
+    type: Coordonateur-trice
+- question: Une campagne réussie doit surtout…
+  choix:
+  - reponse: Être bien préparée.
+    type: Introverti
+  - reponse: Être bien argumentée.
+    type: Idées
+  - reponse: Être belle et inspirante.
+    type: Socio-culturel
+  - reponse: Être visible et percutante.
+    type: Activiste
+  - reponse: Être bien coordonnée.
+    type: Coordonateur-trice
+- question: Dans une équipe, tu es souvent celui/celle qui…
+  choix:
+  - reponse: Fait les petites tâches qu’on oublie.
+    type: Introverti
+  - reponse: Amène une réflexion nouvelle.
+    type: Idées
+  - reponse: Met de la couleur et de l’ambiance.
+    type: Socio-culturel
+  - reponse: Lance l’action.
+    type: Activiste
+  - reponse: Organise les troupes.
+    type: Coordonateur-trice
+- question: Si on t’étiquette dans le mouvement, tu serais plutôt…
+  choix:
+  - reponse: Le soutien fiable.
+    type: Introverti
+  - reponse: Le cerveau.
+    type: Idées
+  - reponse: L’artiste.
+    type: Socio-culturel
+  - reponse: Le moteur.
+    type: Activiste
+  - reponse: Le capitaine.
+    type: Coordonateur-trice

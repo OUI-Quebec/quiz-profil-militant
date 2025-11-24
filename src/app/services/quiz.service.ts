@@ -1,5 +1,5 @@
 import { Injectable, signal, computed, effect, inject } from '@angular/core';
-import { Section } from '../model/section';
+import { Question } from '../model/question';
 import { ProgressionQuiz } from '../model/progression-quiz';
 import { Profil } from '../model/profil';
 import { ProfilService } from './profil.service';
@@ -12,9 +12,8 @@ export class QuizService {
   private profilService = inject(ProfilService);
 
   // Signaux pour l'état de l'application
-  private _sections = signal<Section[]>([]);
+  private _questions = signal<Question[]>([]);
   private _progression = signal<ProgressionQuiz>({
-    sectionActuelle: 0,
     questionActuelle: 0,
     reponses: {},
     complete: false,
@@ -22,29 +21,23 @@ export class QuizService {
   });
 
   // Signaux publics (readonly)
-  sections = this._sections.asReadonly();
+  questions = this._questions.asReadonly();
   progression = this._progression.asReadonly();
 
   // Signaux computed pour les statistiques
   statistiques = computed(() => {
-    const sections = this._sections();
+    const questions = this._questions();
     const progression = this._progression();
-    const totalQuestions = sections.reduce(
-      (total, section) => total + section.questions.length,
-      0
-    );
+    const totalQuestions = questions.length;
     const questionsRepondues = Object.keys(progression.reponses).length;
     const progressionPourcentage =
       totalQuestions > 0 ? (questionsRepondues / totalQuestions) * 100 : 0;
-    const sectionActuelle =
-      sections[progression.sectionActuelle]?.section || '';
     const questionsRestantes = totalQuestions - questionsRepondues;
 
     return {
       totalQuestions,
       questionsRepondues,
       progressionPourcentage,
-      sectionActuelle,
       questionsRestantes,
     };
   });
@@ -114,18 +107,15 @@ export class QuizService {
     try {
       const response = await fetch('./quiz.yaml');
       const yamlText = await response.text();
-      const sections = yaml.load(yamlText) as Section[];
+      const questions = yaml.load(yamlText) as Question[];
 
       // Mélanger les choix pour chaque question
-      const sectionsAvecChoixMelanges = sections.map((section) => ({
-        ...section,
-        questions: section.questions.map((question) => ({
-          ...question,
-          choix: this.melangerTableau(question.choix),
-        })),
+      const questionsAvecChoixMelanges = questions.map((question) => ({
+        ...question,
+        choix: this.melangerTableau(question.choix),
       }));
 
-      this._sections.set(sectionsAvecChoixMelanges);
+      this._questions.set(questionsAvecChoixMelanges);
     } catch (error) {
       console.error('Erreur lors du chargement du quiz:', error);
     }
@@ -152,10 +142,10 @@ export class QuizService {
    */
   enregistrerReponse(typeReponse: string): void {
     const progression = this._progression();
-    const sections = this._sections();
+    const questions = this._questions();
 
-    if (sections.length > 0) {
-      const cleQuestion = `${progression.sectionActuelle}-${progression.questionActuelle}`;
+    if (questions.length > 0) {
+      const cleQuestion = `${progression.questionActuelle}`;
 
       this._progression.update((current) => ({
         ...current,
@@ -172,24 +162,15 @@ export class QuizService {
    */
   questionSuivante(): void {
     const progression = this._progression();
-    const sections = this._sections();
+    const questions = this._questions();
 
-    if (sections.length > 0) {
-      const sectionActuelle = sections[progression.sectionActuelle];
-
+    if (questions.length > 0) {
       this._progression.update((current) => {
-        if (current.questionActuelle < sectionActuelle.questions.length - 1) {
-          // Question suivante dans la même section
+        if (current.questionActuelle < questions.length - 1) {
+          // Question suivante
           return {
             ...current,
             questionActuelle: current.questionActuelle + 1,
-          };
-        } else if (current.sectionActuelle < sections.length - 1) {
-          // Section suivante
-          return {
-            ...current,
-            sectionActuelle: current.sectionActuelle + 1,
-            questionActuelle: 0,
           };
         } else {
           // Quiz terminé
@@ -212,14 +193,6 @@ export class QuizService {
           ...current,
           questionActuelle: current.questionActuelle - 1,
         };
-      } else if (current.sectionActuelle > 0) {
-        const sections = this._sections();
-        return {
-          ...current,
-          sectionActuelle: current.sectionActuelle - 1,
-          questionActuelle:
-            sections[current.sectionActuelle - 1].questions.length - 1,
-        };
       }
       return current;
     });
@@ -241,7 +214,6 @@ export class QuizService {
 
     // Réinitialiser la progression
     const nouvelleProgression: ProgressionQuiz = {
-      sectionActuelle: 0,
       questionActuelle: 0,
       reponses: {},
       complete: false,

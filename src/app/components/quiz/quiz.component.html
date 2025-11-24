@@ -4,21 +4,8 @@
   <app-progression-header />
   }
 
-  <!-- Présentation de section -->
-  <!-- Ajout de sectionActuelle() dans la condition pour éviter d'instancier le composant avec une section null
-       (le chargement des sections est asynchrone, progression existe déjà) -->
-  @if (!progression().complete && doitMontrerPresentationSection() &&
-  sectionActuelle()) {
-  <app-section-presentation
-    [section]="sectionActuelle()"
-    [numeroSection]="progression().sectionActuelle + 1"
-    (commencer)="commencerSection()"
-  />
-  }
-
   <!-- Question -->
-  @if (!progression().complete && !doitMontrerPresentationSection() &&
-  questionActuelle()) {
+  @if (!progression().complete && questionActuelle()) {
   <app-question
     [question]="questionActuelle()"
     [peutRetourner]="peutRetourner()"
