@@ -1,0 +1,29 @@
+@if (isOpen) {
+  <div class="newsletter-overlay" (click)="fermer()">
+    <div
+      class="newsletter-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Formulaire d'inscription à l'infolettre"
+      (click)="$event.stopPropagation()"
+    >
+      <button
+        type="button"
+        class="close-btn"
+        aria-label="Fermer le formulaire"
+        (click)="fermer()"
+      >
+        ✕
+      </button>
+      <div class="iframe-wrapper">
+        <iframe
+          src="https://app.cyberimpact.com/clients/45143/subscribe-forms/93F7E6BB-DAFF-4D69-AE48-3853AD4749B3"
+          width="100%"
+          height="100%"
+          loading="lazy"
+          title="Inscription à l'infolettre"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+}

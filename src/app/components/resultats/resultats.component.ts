@@ -15,6 +15,7 @@ import { ProfilService } from '../../services/profil.service';
 import { ProfilDialogComponent } from '../profil-dialog/profil-dialog.component';
 import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confirmation.component';
+import { InfolettreModalComponent } from '../infolettre-modal/infolettre-modal.component';
 
 @Component({
   selector: 'app-resultats',
@@ -23,6 +24,7 @@ import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confi
     ProfilDialogComponent,
     LottieEmojiComponent,
     DialogConfirmationComponent,
+    InfolettreModalComponent
   ],
   templateUrl: './resultats.component.html',
   styleUrl: './resultats.component.scss',
@@ -32,11 +34,14 @@ export class ResultatsComponent implements OnInit {
   private profilService = inject(ProfilService);
   private router = inject(Router);
 
+  private infolettreOpen = signal<boolean>(false);
   readonly profils = input<Profil[]>([]);
   readonly implicationLottie =
     viewChild.required<LottieEmojiComponent>('implicationLottie');
   readonly refaireLottie =
     viewChild.required<LottieEmojiComponent>('refaireLottie');
+
+  infolettreVisible = computed(() => this.infolettreOpen());
 
   profilPrincipal: Profil | null = null;
   autresProfils: Profil[] = [];
@@ -145,5 +150,13 @@ export class ResultatsComponent implements OnInit {
    */
   annulerRecommencer(): void {
     this.showDialogRecommencer.set(false);
+  }
+
+  ouvrirPopupInfolettre(): void {
+    this.infolettreOpen.set(true);
+  }
+
+  fermerPopupInfolettre(): void {
+    this.infolettreOpen.set(false);
   }
 }

@@ -5,12 +5,13 @@ import { ProfilService } from '../../services/profil.service';
 import { ProfilDialogComponent } from '../profil-dialog/profil-dialog.component';
 import { LottieEmojiComponent } from '../lottie-emoji/lottie-emoji.component';
 import { FooterComponent } from '../footer/footer.component';
+import { InfolettreModalComponent } from '../infolettre-modal/infolettre-modal.component';
 import { Profil } from '../../model/profil';
 
 @Component({
   selector: 'app-accueil',
   standalone: true,
-  imports: [ProfilDialogComponent, LottieEmojiComponent, FooterComponent],
+  imports: [ProfilDialogComponent, LottieEmojiComponent, FooterComponent, InfolettreModalComponent],
   templateUrl: './accueil.component.html',
   styleUrl: './accueil.component.scss',
 })
@@ -24,10 +25,12 @@ export class AccueilComponent {
   // Signal pour le dialogue
   private dialogOpen = signal(false);
   private profilSelectionne = signal<Profil | null>(null);
+  private infolettreOpen = signal(false);
 
   // Computed pour les données du dialogue
   isDialogOpen = computed(() => this.dialogOpen());
   profil = computed(() => this.profilSelectionne());
+  infolettreVisible = computed(() => this.infolettreOpen());
 
   // Computed pour récupérer les profils avec leurs données complètes
   profils = computed(() => {
@@ -56,6 +59,14 @@ export class AccueilComponent {
   fermerDialog(): void {
     this.dialogOpen.set(false);
     this.profilSelectionne.set(null);
+  }
+
+  ouvrirPopupInfolettre(): void {
+    this.infolettreOpen.set(true);
+  }
+
+  fermerPopupInfolettre(): void {
+    this.infolettreOpen.set(false);
   }
 
   onHoverCommencer(isHovering: boolean): void {

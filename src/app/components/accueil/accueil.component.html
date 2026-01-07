@@ -35,6 +35,14 @@
           />
         </span>
       </button>
+
+      <button
+        class="btn-secondary"
+        type="button"
+        (click)="ouvrirPopupInfolettre()"
+      >
+        S'inscrire à l'infolettre
+      </button>
     </div>
 
     <div class="info-sections">
@@ -63,6 +71,11 @@
     [profil]="profil()!"
     [isOpen]="isDialogOpen()"
     (close)="fermerDialog()"
+  />
+
+  <app-infolettre-modal
+    [isOpen]="infolettreVisible()"
+    (close)="fermerPopupInfolettre()"
   />
 
   <!-- Footer -->

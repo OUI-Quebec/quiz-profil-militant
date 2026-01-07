@@ -18,7 +18,9 @@
 
   <!-- Résultats -->
   @if (progression().complete && profils().length > 0) {
-  <app-resultats [profils]="profils()" />
+  <div class="results-block">
+    <app-resultats [profils]="profils()" />
+  </div>
   }
 
   <!-- Footer toujours visible -->
