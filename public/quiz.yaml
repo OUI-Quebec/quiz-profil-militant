@@ -58,30 +58,6 @@
     type: Activiste
   - reponse: Être la personne qui présente la soirée.
     type: Coordonateur-trice
-- question: Si on te proposait un rôle demain, tu choisirais…
-  choix:
-  - reponse: Gestion d’une liste de contacts.
-    type: Introverti
-  - reponse: Recherche et synthèse sur un enjeu.
-    type: Idées
-  - reponse: Décoration d’un espace pour un rassemblement.
-    type: Socio-culturel
-  - reponse: Bannière géante sur un pont.
-    type: Activiste
-  - reponse: Planifier la prochaine campagne locale.
-    type: Coordonateur-trice
-- question: Face à une critique de l’indépendance, tu es du genre à…
-  choix:
-  - reponse: Écouter et transmettre à d’autres plus à l’aise.
-    type: Introverti
-  - reponse: Répondre avec un argument précis.
-    type: Idées
-  - reponse: Raconter une histoire culturelle ou émotive.
-    type: Socio-culturel
-  - reponse: Répliquer en affichant fièrement tes convictions.
-    type: Activiste
-  - reponse: Encourager le groupe à rester uni et positif.
-    type: Coordonateur-trice
 - question: Si tu devais convaincre un ami de l’importance d’agir, tu…
   choix:
   - reponse: Lui montrerais des petites actions faciles.
@@ -93,30 +69,6 @@
   - reponse: L’amènerais à une manif.
     type: Activiste
   - reponse: L’intégrerais directement à ton équipe.
-    type: Coordonateur-trice
-- question: Dans un projet, tu préfères être…
-  choix:
-  - reponse: Celui ou celle qui soutient.
-    type: Introverti
-  - reponse: Celui ou celle qui éclaire.
-    type: Idées
-  - reponse: Celui ou celle qui inspire.
-    type: Socio-culturel
-  - reponse: Celui ou celle qui agit.
-    type: Activiste
-  - reponse: Celui ou celle qui guide.
-    type: Coordonateur-trice
-- question: Ton plus grand plaisir dans le militantisme, c’est…
-  choix:
-  - reponse: Voir une tâche complétée.
-    type: Introverti
-  - reponse: Voir les gens comprendre un argument.
-    type: Idées
-  - reponse: Voir les gens vibrer ensemble.
-    type: Socio-culturel
-  - reponse: Voir un geste marquer l’espace public.
-    type: Activiste
-  - reponse: Voir une équipe réussir grâce à toi.
     type: Coordonateur-trice
 - question: Si tu devais laisser une trace dans le mouvement, ce serait…
   choix:
@@ -166,18 +118,6 @@
     type: Activiste
   - reponse: Rassembleur.
     type: Coordonateur-trice
-- question: Dans un mouvement, tu admires surtout...
-  choix:
-  - reponse: Ceux qui tiennent la machine en marche.
-    type: Introverti
-  - reponse: Ceux qui portent les idées.
-    type: Idées
-  - reponse: Ceux qui créent des moments uniques.
-    type: Socio-culturel
-  - reponse: Ceux qui osent des actions.
-    type: Activiste
-  - reponse: Ceux qui mobilisent les foules.
-    type: Coordonateur-trice
 - question: Dans 5 ans, tu aimerais avoir contribué en…
   choix:
   - reponse: Soutenant en coulisses.
@@ -201,18 +141,6 @@
   - reponse: Une manif avec banderole géante.
     type: Activiste
   - reponse: Une grande assemblée coordonnée par toi.
-    type: Coordonateur-trice
-- question: Dans ton temps libre, tu préfères…
-  choix:
-  - reponse: Ranger et organiser.
-    type: Introverti
-  - reponse: Lire et apprendre.
-    type: Idées
-  - reponse: Créer et partager.
-    type: Socio-culturel
-  - reponse: Sortir et agir.
-    type: Activiste
-  - reponse: Coordonner et planifier.
     type: Coordonateur-trice
 - question: Une campagne réussie doit surtout…
   choix:
