@@ -113,6 +113,7 @@
         border-radius: 8px;
         padding: 2rem;
         text-align: left;
+        margin-bottom: 2rem;
 
         h3 {
           color: #fef3c7;
@@ -135,6 +136,36 @@
               left: 0;
               top: 0.5rem;
             }
+          }
+        }
+      }
+
+      .inscription-militant {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 2rem;
+        text-align: left;
+
+        h3 {
+          color: #fef3c7;
+          margin-bottom: 1rem;
+          font-size: 1.3rem;
+        }
+
+        p {
+          margin-bottom: 1.5rem;
+          font-size: 1.1rem;
+          opacity: 0.9;
+        }
+
+        .iframe-container {
+
+          iframe {
+            display: block;
+            width: 100%;
+            min-height: 600px;
+            border: none;
+            color: white!important;
           }
         }
       }
