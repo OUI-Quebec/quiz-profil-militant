@@ -1,7 +1,7 @@
 - question: Quand tu penses à ton engagement pour l’indépendance, tu t’imagines surtout…
   choix:
   - reponse: Préparer du matériel tranquillement chez moi.
-    type: Introverti
+    type: Discret
   - reponse: Débattre et partager des arguments solides.
     type: Idées
   - reponse: Participer à un spectacle ou une soirée militante inspirante.
@@ -13,7 +13,7 @@
 - question: Dans un groupe, tu te sens plus à l’aise quand...
   choix: 
   - reponse: Tu soutiens en arrière-plan.
-    type: Introverti
+    type: Discret
   - reponse: Tu apportes des connaissances.
     type: Idées
   - reponse: Tu mets de l’ambiance.
@@ -25,7 +25,7 @@
 - question: Ce qui te motive le plus à militer
   choix:
   - reponse: Savoir que j’ai contribué, même discrètement.
-    type: Introverti
+    type: Discret
   - reponse: Rendre les arguments clairs et convaincants.
     type: Idées
   - reponse: Créer des moments rassembleurs et mémorables.
@@ -37,7 +37,7 @@
 - question: Si tu avais une heure à donner par semaine, tu préférerais…
   choix:
   - reponse: Coller des affiches discrètement.
-    type: Introverti
+    type: Discret
   - reponse: Rédiger un texte ou une fiche d’argumentaire.
     type: Idées
   - reponse: Fabriquer une banderole artistique.
@@ -49,7 +49,7 @@
 - question: Tu es invité·e à un événement indépendantiste. Tu aimerais surtout…
   choix:
   - reponse: Aider à l’installation et la logistique.
-    type: Introverti
+    type: Discret
   - reponse: Donner une mini-conférence.
     type: Idées
   - reponse: Participer à une soirée musicale militante.
@@ -61,7 +61,7 @@
 - question: Si tu devais convaincre un ami de l’importance d’agir, tu…
   choix:
   - reponse: Lui montrerais des petites actions faciles.
-    type: Introverti
+    type: Discret
   - reponse: Lui donnerais des faits et arguments.
     type: Idées
   - reponse: L’inviterais à un spectacle ou une soirée militante.
@@ -73,7 +73,7 @@
 - question: Si tu devais laisser une trace dans le mouvement, ce serait…
   choix:
   - reponse: Une base de données bien organisée.
-    type: Introverti
+    type: Discret
   - reponse: Un texte fondateur.
     type: Idées
   - reponse: Une chanson ou une affiche marquante.
@@ -85,7 +85,7 @@
 - question: Ce qui te rend fier en militant
   choix:
   - reponse: Contribuer efficacement.
-    type: Introverti
+    type: Discret
   - reponse: Avoir enrichi le débat.
     type: Idées
   - reponse: Avoir touché les cœurs.
@@ -97,7 +97,7 @@
 - question: Si tu avais une responsabilité demain, ce serait…
   choix:
   - reponse: Gérer une liste d’appels.
-    type: Introverti
+    type: Discret
   - reponse: Animer une discussion publique.
     type: Idées
   - reponse: Organiser une soirée de poésie.
@@ -109,7 +109,7 @@
 - question: Ton style d’engagement préféré
   choix:
   - reponse: Discret.
-    type: Introverti
+    type: Discret
   - reponse: Intellectuel.
     type: Idées
   - reponse: Créatif.
@@ -121,7 +121,7 @@
 - question: Dans 5 ans, tu aimerais avoir contribué en…
   choix:
   - reponse: Soutenant en coulisses.
-    type: Introverti
+    type: Discret
   - reponse: Renforçant l’argumentaire indépendantiste.
     type: Idées
   - reponse: Faisant rayonner la culture indépendantiste.
@@ -133,7 +133,7 @@
 - question: Ton moment militant idéal
   choix:
   - reponse: Un soir à plier des tracts en petit groupe.
-    type: Introverti
+    type: Discret
   - reponse: Une conférence sur l’avenir économique du Québec.
     type: Idées
   - reponse: Un spectacle de musique indépendantiste.
@@ -145,7 +145,7 @@
 - question: Une campagne réussie doit surtout…
   choix:
   - reponse: Être bien préparée.
-    type: Introverti
+    type: Discret
   - reponse: Être bien argumentée.
     type: Idées
   - reponse: Être belle et inspirante.
@@ -157,7 +157,7 @@
 - question: Dans une équipe, tu es souvent celui/celle qui…
   choix:
   - reponse: Fait les petites tâches qu’on oublie.
-    type: Introverti
+    type: Discret
   - reponse: Amène une réflexion nouvelle.
     type: Idées
   - reponse: Met de la couleur et de l’ambiance.
@@ -169,7 +169,7 @@
 - question: Si on t’étiquette dans le mouvement, tu serais plutôt…
   choix:
   - reponse: Le soutien fiable.
-    type: Introverti
+    type: Discret
   - reponse: Le cerveau.
     type: Idées
   - reponse: L’artiste.

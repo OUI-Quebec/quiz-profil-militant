@@ -1,7 +1,7 @@
 export interface Choix {
   reponse: string;
   type:
-    | 'Introverti'
+    | 'Discret'
     | 'Idées'
     | 'Socio-culturel'
     | 'Activiste'

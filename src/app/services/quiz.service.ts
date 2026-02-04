@@ -53,7 +53,7 @@ export class QuizService {
     const scores: { [key: string]: number } = {
       Activiste: 0,
       Idées: 0,
-      Introverti: 0,
+      Discret: 0,
       'Coordonateur-trice': 0,
       'Socio-culturel': 0,
     };
